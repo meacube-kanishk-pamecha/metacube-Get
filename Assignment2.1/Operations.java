@@ -1,35 +1,35 @@
 public class Operations {
 
     protected String addition(String num1, String num2) {
-        int a = convert(num1);
-        int b = convert(num2);
+        int a =convertHexToDec(num1);
+        int b =convertHexToDec(num2);
         int c = a + b;
-        return reConvert(c);
+        return convertDecToHex(c);
     }
 
     protected String subtract(String num1, String num2) {
-        int a = convert(num1);
-        int b = convert(num2);
+        int a =convertHexToDec(num1);
+        int b =convertHexToDec(num2);
         int c = a - b;
-        return reConvert(c);
+        return convertDecToHex(c);
     }
 
     protected String multiplication(String num1, String num2) {
-        int a = convert(num1);
-        int b = convert(num2);
+        int a =convertHexToDec(num1);
+        int b =convertHexToDec(num2);
         int c = a * b;
-        return reConvert(c);
+        return convertDecToHex(c);
     }
 
     protected String division(String num1, String num2) {
-        int a = convert(num1);
-        int b = convert(num2);
+        int a =convertHexToDec(num1);
+        int b =convertHexToDec(num2);
         int c = a / b;
-        return reConvert(c);
+        return convertDecToHex(c);
     }
 
     // hexadecimal String to int decimal
-    protected int convert(String a) {
+    protected int convertHexToDec(String a) {
         int length = a.length();
         int decimal = 0;
         int base = 1;
@@ -49,7 +49,7 @@ public class Operations {
     }
 
     // Conversion from decimal to hexadecimal
-    protected String reConvert(int a) {
+    protected String convertDecToHex(int a) {
         boolean neg = false;
         if (a < 0) {
             neg = true;

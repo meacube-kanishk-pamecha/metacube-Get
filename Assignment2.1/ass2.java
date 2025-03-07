@@ -47,10 +47,10 @@ class ass2 {
                 System.out.println(op.smaller(num1, num2));
                 break;
             case 8:
-                System.out.println(op.convert(num1));
+                System.out.println(op.convertHexToDec(num1));
                 break;
             case 9:
-                System.out.println(op.reConvert(dec));
+                System.out.println(op.convertDecToHex(dec));
                 break;
             default:
                 System.out.println("Enetr from the option");
