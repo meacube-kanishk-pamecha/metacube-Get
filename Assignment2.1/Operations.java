@@ -55,6 +55,7 @@ public class Operations {
             neg = true;
             a = a * -1;
         }
+        if(a==0) return "0";
         StringBuilder s = new StringBuilder();
         int c = a;
         while (c != 0) {
