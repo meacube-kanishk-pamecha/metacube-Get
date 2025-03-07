@@ -40,7 +40,10 @@ public class Operations {
             } else if (a.charAt(i) >= 'A' && a.charAt(i) <= 'F') {
                 decimal += ((a.charAt(i) - 'A' + 10) * base);
                 base *= 16;
-            } else {
+            } else if(a.charAt(i)>='a' && a.charAt(i)<='f'){
+                decimal+=((a.charAt(i)-'a'+10 )*base);
+                base*=16;
+            }else {
                 System.out.print("Error! use good hexadecimal Numbers");
             }
 
