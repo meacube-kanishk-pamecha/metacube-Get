@@ -8,6 +8,10 @@ public class JobSchedularTest {
         System.out.println("Enter the num of Process");
         Scanner Sc = new Scanner(System.in);
         int a = Sc.nextInt();
+        if (a == 0) {
+            Sc.close();
+            return;
+        }
         System.out.println("For this " + a + " Number of timeArr give start time after that burst time");
 
         int[][] timeArr = new int[a][2];
@@ -17,7 +21,8 @@ public class JobSchedularTest {
         }
         Arrays.sort(timeArr, (n1, n2) -> Integer.compare(n1[0], n2[0]));
         JobScheduler job = new JobScheduler();
-        System.out.println("1 : completionTime \n 2 : WaitingTime \n 3 : turnAroundTime \n 4 : Average Waiting \n 5 : Max Waiting");
+        System.out.println(
+                "1 : completionTime \n 2 : WaitingTime \n 3 : turnAroundTime \n 4 : Average Waiting \n 5 : Max Waiting");
         int option = Sc.nextInt();
         switch (option) {
             case 1:

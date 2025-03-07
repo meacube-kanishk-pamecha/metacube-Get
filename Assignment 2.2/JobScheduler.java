@@ -21,12 +21,9 @@ public class JobScheduler {
         int a = timeArr.length;
         turnAroundTime = new int[a];
         completionTime = completionTime(timeArr);
-
         for (int i = 0; i < a; i++) {
-
-            turnAroundTime[i] = completionTime[i] - timeArr[i][0];
+             turnAroundTime[i] = completionTime[i] - timeArr[i][0];
         }
-
         return turnAroundTime; 
     }
 
@@ -34,10 +31,11 @@ public class JobScheduler {
     protected int[] waitingTime(int[][] timeArr) {
         int a = timeArr.length;
         turnAroundTime = turnAroundTime(timeArr);
+        waitingTime = new int[a];
         for (int i = 0; i < a; i++) {
             waitingTime[i] = turnAroundTime[i] - timeArr[i][1];
         }
-        return turnAroundTime;
+        return waitingTime;
     }
 
     // average Waiting 
@@ -47,7 +45,7 @@ public class JobScheduler {
         for (int i = 0; i < a; i++) {
             avgWaiting += waitingTime[i];
         }
-        avgWaiting = avgWaiting / a;
+        avgWaiting = avgWaiting / a;  
         return avgWaiting;
     } 
 
