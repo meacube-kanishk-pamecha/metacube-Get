@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class question1 {
+public class OperationsTest {
     public static void main(String[] args) {
-        operations op = new operations();
+        Operations op = new Operations();
         Scanner Sc = new Scanner(System.in);
         System.out.println(" Write the input String");
         String str = Sc.nextLine();

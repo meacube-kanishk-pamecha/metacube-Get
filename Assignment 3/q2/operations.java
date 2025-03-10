@@ -25,19 +25,15 @@ public class operations {
             switch (c) {
                 case 1:
                     System.out.println(m.average(arr));
-
                     break;
                 case 2:
                     System.out.println(m.max(arr));
-
                     break;
                 case 3:
                     System.out.println(m.min(arr));
-
                     break;
                 case 4:
                     System.out.println(m.passed(arr) + "%");
-
                     break;
                 default:
                     break;

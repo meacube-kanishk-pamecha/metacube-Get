@@ -1,7 +1,8 @@
 
 class Marksheet {
 
-    public double average(int[] arr) {
+    // average of number in a array
+    protected double average(int[] arr) {
         double avg = 0;
         for (int j = 0; j < arr.length; j++) {
             avg += arr[j];
@@ -9,7 +10,8 @@ class Marksheet {
         return avg / arr.length;
     }
 
-    public int max(int[] arr) {
+    // max of a number in the array
+    protected int max(int[] arr) {
         int max = Integer.MIN_VALUE;
         for (int i : arr) {
             max = Math.max(i, max);
@@ -17,7 +19,8 @@ class Marksheet {
         return max;
     }
 
-    public int min(int[] arr) {
+    //min of the number in a array
+    protected int min(int[] arr) {
         int min = Integer.MAX_VALUE;
         for (int i : arr) {
             min = Math.min(i, min);
@@ -25,7 +28,8 @@ class Marksheet {
         return min;
     }
 
-    public double passed(int[] arr) {
+    // percentage of persons have passed
+    protected double passed(int[] arr) {
         double passed = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] >= 40)
