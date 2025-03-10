@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
-public class operations {
+public class Operations {
+
+    
     public static void main(String[] args) throws ArithmeticException {
-        Marksheet m = new Marksheet();
+        Marksheet m = new Marksheet(); // Creating objects of the marksheet class
         Scanner Sc = new Scanner(System.in);
         try {
-            System.out.println("My name is kanishk Pamecha");
+           
             System.out.println(" Write the value of n");
             int n = Sc.nextInt();
             int[] arr = new int[n];
@@ -39,7 +41,7 @@ public class operations {
                     break;
             }
 
-        } catch (Exception ArithmeticException) {
+        } catch (Exception ArithmeticException) { // catching the arithmetic exception
             System.out.println("Arithmetic exception detected");
         } finally {
             Sc.close();

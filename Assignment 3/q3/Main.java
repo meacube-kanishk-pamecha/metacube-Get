@@ -13,23 +13,23 @@ public class Main {
                     System.out.println("Input height and base ");
                     int h = Sc.nextInt();
                     int b = Sc.nextInt();
-                    System.out.println(a.Triangle(h, b));
+                    System.out.println(a.triangle(h, b));
                     break;
                 case 2:
                     System.out.println("Input height and width");
                     h = Sc.nextInt();
                     b = Sc.nextInt();
-                    System.out.println(a.Rectangle(h, b));
+                    System.out.println(a.rectangle(h, b));
                     break;
                 case 3:
                     System.out.println("Input Side of the square");
                     h = Sc.nextInt();
-                    System.out.println(a.Square(h));
+                    System.out.println(a.square(h));
                     break;
                 case 4:
                     System.out.println("Radius of the circle");
                     int r = Sc.nextInt();
-                    System.out.println(a.Circle(r));
+                    System.out.println(a.circle(r));
                     break;
 
                 default:

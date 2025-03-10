@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 public class Mirror {
 
-    protected int maxMirror(int[] arr) {
+    protected int maxMirror(int[] arr)  {
+        //if(arr.length==0) throw AssertionError("Empty Array");
         int max = Integer.MIN_VALUE;
         HashMap<String, Integer> s = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
