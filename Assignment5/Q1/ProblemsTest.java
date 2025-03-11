@@ -10,6 +10,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class ProblemsTest {
     
    static Problems p = new Problems();
+   /**
+    * 
+   */
     private static Stream<Arguments> inputCheck(){
         return Stream.of(
             Arguments.of(3,4,1),

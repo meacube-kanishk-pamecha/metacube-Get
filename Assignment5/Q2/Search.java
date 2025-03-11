@@ -1,6 +1,13 @@
 package Q2;
 
 public class Search {
+    /**
+     * 
+     * @param arr
+     * @param x
+     * @param idx
+     * @return
+     */
     public int binary(int [] arr, int x,int idx)
     { if(idx>arr.length-1||idx<0) return -1;
         if(arr[idx]==x) return idx;
@@ -10,6 +17,13 @@ public class Search {
         if(a==-1)return b;
         return a;
     }
+    /**
+     * 
+     * @param arr
+     * @param idx
+     * @param x
+     * @return
+     */
     protected int linear(int []arr,int idx,int x)
     {
         if(arr[idx]==x) return idx;

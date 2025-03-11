@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class OperationsTest {
     public static void main(String[] args) {
-        Operations op = new Operations();
+        OperationsString op = new OperationsString();
         Scanner Sc = new Scanner(System.in);
         System.out.println(" Write the input String");
         String str = Sc.nextLine();
@@ -17,7 +17,7 @@ public class OperationsTest {
                 System.out.println("Enter the other String ");
                 Sc.nextLine();
                 String str2 = Sc.nextLine();
-                System.out.println(op.equals(str, str2));
+                System.out.println(op.equal(str, str2));
                 break;
             case 3:
                 System.out.println(op.reverse(str));

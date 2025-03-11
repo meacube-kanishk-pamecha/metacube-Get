@@ -69,7 +69,7 @@ public class Operations {
      * @param String str words of different length
      * @return String word with the max length in the string 
      */
-    protected String largestWord(String str) {
+    public String largestWord(String str) {
         // largest Word in the String
 
         String[] sArray = str.split(" "); // Splits the Stirng on the basis of space and storing it in array
