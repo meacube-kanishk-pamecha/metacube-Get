@@ -4,24 +4,34 @@ import java.util.HashMap;
 
 public class Mirror {
 
-    protected int maxMirror(int[] arr)  {
-        //if(arr.length==0) throw AssertionError("Empty Array");
+    /**
+     * 
+     * maxMirror gives the max Number of mirror number present in the array
+     * 
+     * @param int [] arr length greater then 0
+     * @return the maxMirror
+     * @throws AssertionError if Array is Empty
+     */
+    protected int maxMirror(int[] arr) throws AssertionError {
+        if (arr.length == 0)
+            throw new AssertionError("Empty Array");
         int max = Integer.MIN_VALUE;
+
         HashMap<String, Integer> s = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             StringBuilder str = new StringBuilder();
             int count = 0;
             for (int j = i; j < arr.length; j++) {
-                str.append(arr[j]);
+                str.append(arr[j]); // Appending the sharacter
                 count++;
-                var ss = str.toString();
-                s.put(ss, s.getOrDefault(ss, count));
+                var ss = str.toString();   // Creating it a String
+                s.put(ss, s.getOrDefault(ss, count)); // adding all the String Combinations
             }
         }
         for (var temp : s.keySet()) {
             StringBuilder strB = new StringBuilder(temp);
-            String str = strB.reverse().toString();
-            if (s.containsKey(str)) {
+            String str = strB.reverse().toString(); // reversing the String
+            if (s.containsKey(str)) { // if reverse is present then this will be followed
                 max = Math.max(max, s.get(str));
             }
 
