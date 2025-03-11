@@ -4,7 +4,7 @@ public class FixXY {
   
     /**
      * 
-     * @param arr
+     * @param arr the array in which the data is stored
      * @param int X the value of X on which the action is to be performed. 
      * @param int Y the value of Y which is to be behind the X
      * @return int []  on which the action is performed 

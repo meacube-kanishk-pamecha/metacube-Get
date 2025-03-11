@@ -16,6 +16,7 @@ public class SplitArray {
       return sum; // return the sum of the array
    }
 
+   
    /**
     * split array to be splited in equal halfs.
     * 
@@ -31,7 +32,7 @@ public class SplitArray {
       double curr = 0;
       for (int i = 0; i < arr.length; i++) // iterate through array
       {
-         System.out.println(sum);
+
          curr += arr[i];
          if (curr == sum)
             return i + 1;

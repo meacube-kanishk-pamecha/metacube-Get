@@ -11,6 +11,7 @@ public class Problems {
     protected int  LCM(int x, int y){
         if(y==0) return x;
         return x*y/LCM(x, y);
+        
     }
 
 }
