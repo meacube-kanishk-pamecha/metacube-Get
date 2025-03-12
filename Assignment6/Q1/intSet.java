@@ -8,6 +8,9 @@ class intSet{
             arr[array[i]]= true;
         }
     }
+     intSet(boolean []array){
+        arr = array;
+    }
     public boolean isMember(int i){
         if(arr[i]==true) 
         return true;
@@ -26,16 +29,16 @@ class intSet{
     {
         for(int i =0 ;i<1000;i++)
         {
-            if(st.arr[i] && !this.arr[i])return false;
+            if(!st.arr[i] && this.arr[i])return false;
         }
         return true;
     }
-    public boolean[] getComplement(){
+    public intSet getComplement(){
         boolean [] newarr = new boolean[this.arr.length];
         for(int i =0;i<arr.length;i++){
             newarr[i]=!arr[i];
         }
-        return newarr;
+        return new intSet( newarr);
     }
     public boolean[] union(intSet st){
         boolean [] newarr = new boolean[this.arr.length];
