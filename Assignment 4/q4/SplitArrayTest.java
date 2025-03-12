@@ -13,11 +13,11 @@ public class SplitArrayTest {
 
   private static SplitArray sp = new SplitArray();
 
-   /**
-     * inputandresult which gives the them the input case for testing
-     * 
-     * @return Strem Of Arguments for testing
-     */
+  /**
+   * inputandresult which gives the them the input case for testing
+   * 
+   * @return Strem Of Arguments for testing
+   */
   private static Stream<Arguments> inputandresult() {
     return Stream.of(
         Arguments.of(new int[] { 1, 1, 1, 2, 1 }, 3),
@@ -25,24 +25,25 @@ public class SplitArrayTest {
         Arguments.of(new int[] { 10, 10 }, 1));
   }
 
-
-/**
- * 
- * passSplit  in this if we are expecting 
- * @param int [] input the array on which Split is to be performed 
- * @param int op what output we are expecting 
- */
+  /**
+   * 
+   * passSplit in this if we are expecting
+   * 
+   * @param int [] input the array on which Split is to be performed
+   * @param int op what output we are expecting
+   */
   @ParameterizedTest
   @MethodSource("inputandresult")
   public void passSplit(int[] input, int op) {
-          assertEquals(op, sp.split(input));
-    
+    assertEquals(op, sp.split(input));
+
   }
+
   /**
    * testFail forfailed condition like empty array
    */
-  public void testFail(){
-        int[] arr = new int[0];
-        assertThrows(AssertionError.class, () -> sp.split(arr));
-    }
+  public void testFail() {
+    int[] arr = new int[0];
+    assertThrows(AssertionError.class, () -> sp.split(arr));
+  }
 }

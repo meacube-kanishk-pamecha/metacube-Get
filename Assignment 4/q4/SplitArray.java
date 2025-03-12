@@ -16,7 +16,6 @@ public class SplitArray {
       return sum; // return the sum of the array
    }
 
-   
    /**
     * split array to be splited in equal halfs.
     * 

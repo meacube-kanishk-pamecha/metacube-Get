@@ -15,11 +15,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class MirrorTest {
     private static Mirror m = new Mirror();
     // public static void main(String[] args) {
-        
-    //  System.out.println(  m.maxMirror(new int[]{ 7, 1, 4, 9, 7, 4, 1 }));
+
+    // System.out.println( m.maxMirror(new int[]{ 7, 1, 4, 9, 7, 4, 1 }));
     // }
 
-    
     /**
      * inputandresult which gives the them the input case for testing
      * 
@@ -29,14 +28,15 @@ public class MirrorTest {
         return Stream.of(
                 Arguments.of(new int[] { 1, 2, 3, 8, 9, 3, 2, 1 }, 3),
                 Arguments.of(new int[] { 7, 1, 4, 9, 7, 4, 1 }, 2),
-                Arguments.of(new int[] { 1, 2, 1, 4 }, 3)
-                );
+                Arguments.of(new int[] { 1, 2, 1, 4 }, 3));
     }
 
     /**
      * 
-     * @param int [] input
-     * @param op
+     * testPass checks
+     * 
+     * @param int [] input the input array we are giving
+     * @param int op the output we are expecting
      */
     @ParameterizedTest
     @MethodSource("inputandresult")
@@ -45,15 +45,13 @@ public class MirrorTest {
     }
 
     /**
+     * testFail for the failed test like empty array
      * 
      */
     @Test
-    public void test_fail(){
+    public void testFail() {
         int[] arr = new int[0];
         assertThrows(AssertionError.class, () -> m.maxMirror(arr));
     }
-
-     
-    
 
 }

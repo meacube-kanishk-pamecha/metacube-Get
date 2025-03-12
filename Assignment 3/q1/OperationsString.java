@@ -1,4 +1,4 @@
-public class Operations {
+public class OperationsString {
 
     /**
      * equals To see If two Strings are equal
@@ -8,7 +8,7 @@ public class Operations {
      * @return int  If equals then return 1 else return 0;
      * 
      */
-    protected int equals(String s1, String s2) {
+    public int equal(String s1, String s2) {
         // Checking two Strings are equal or not
         int n1 = s1.length();
         int n2 = s2.length(); // lengths of the string
@@ -29,7 +29,7 @@ public class Operations {
      * @return String the reversed String
      * 
      */
-    protected String reverse(String s1) {
+    public String reverse(String s1) {
         // Reverse of a String
         char[] newStr = new char[s1.length()]; // Creating an Array type char of length of the String
         int j = 0;
