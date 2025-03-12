@@ -1,5 +1,5 @@
 package Q1;
-class intSet{
+ final class intSet{
     boolean[]arr = new boolean[1000];
     private int num =0;
 
@@ -40,19 +40,19 @@ class intSet{
         }
         return new intSet( newarr);
     }
-    public boolean[] union(intSet st){
+    public intSet union(intSet st){
         boolean [] newarr = new boolean[this.arr.length];
         for (int i = 0; i < arr.length; i++) {
             if(st.arr[i]||this.arr[i])  newarr[i]=true;
         }
-        return newarr;
+        return new intSet( newarr);
     }
-    public boolean[] intersection(intSet st){
+    public intSet intersection(intSet st){
         boolean [] newarr = new boolean[this.arr.length];
         for (int i = 0; i < arr.length; i++) {
             if(st.arr[i] && this.arr[i])  newarr[i]=true;
         }
-        return newarr;
+        return new intSet( newarr);
     }
 
 }
