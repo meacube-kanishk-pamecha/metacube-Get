@@ -47,17 +47,17 @@ public class NQueen {
      * @return boolean
      */
     protected boolean queenPresent(int[][] arr, int i, int j) {
-        boolean safe = true;
+        
         // Checks in the column
         for (int k = 0; k < arr.length; k++) {
             if (arr[i][k] != 0) // queen is present it is not safe
-                safe = false;
+                return false;
 
         }
         // checks in the row
         for (int k = 0; k < arr.length; k++) {
             if (arr[k][j] != 0) // queen is present it is not safe
-                safe = false;
+                return false;
         }
         int k = i;
         int l = j;
@@ -65,31 +65,31 @@ public class NQueen {
         // checks in the upper left side
         while (k >= 0 && l >= 0) {
             if (arr[k--][l--] != 0) // queen is present it is not safe
-                safe = false;
+                return false;
         }
         k = i;
         l = j;
         // checks in the lower left side
         while (k >= 0 && l < arr.length) {
             if (arr[k--][l++] != 0) // queen is present it is not safe
-                safe = false;
+                return false;
         }
         k = i;
         l = j;
         // checks in the upper right side
         while (k < arr.length && l >= 0) {
             if (arr[k++][l--] != 0) // queen is present it is not safe
-                safe = false;
+                return false;
         }
         k = i;
         l = j;
         // checks int lower right side
         while (k < arr.length && l < arr.length) {
             if (arr[k++][l++] != 0) // queen is present it is not safe
-                safe = false;
+                return false;
         }
 
-        return safe;
+        return true;
 
     }
 }
