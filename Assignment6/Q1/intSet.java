@@ -1,6 +1,6 @@
 package Q1;
  final class intSet{
-    boolean[]arr = new boolean[1000];
+   private boolean[]arr = new boolean[1000];
     private int num =0;
 
     intSet(int[]array){
