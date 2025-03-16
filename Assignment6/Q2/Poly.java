@@ -1,6 +1,7 @@
 package Q2;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Poly {
     private int[] coeff;
@@ -106,7 +107,7 @@ public class Poly {
         }
         return new Poly(newarr);
     }
-
+   
     /**
      * degree it is used to represent the degree of the polynomial
      * 
@@ -140,7 +141,35 @@ public class Poly {
                 System.out.print(" + ");
             pow++;
         }
+        System.out.println();
     }
+
+
+    void mutablePoly(){
+        System.out.println("how many more Polynomials you want to add");
+        Scanner Sc = new Scanner(System.in);
+        int n = Sc.nextInt();
+        int [] arr = new int[coeff.length+n];
+        for (int i=0;i<arr.length;i++) {
+            arr[i] =coeff[i];
+        }
+       for (int i = 0; i < n; i++) {
+        System.out.println("For the value of x"+(i+coeff.length));
+        int newinput = Sc.nextInt();
+        arr[i]=newinput;
+       }
+       coeff = Arrays.copyOf(arr, arr.length);
+       Sc.close();
+    }
+
+    void delete(){
+    
+    
+    
+    }
+    
+
+
 
     
 }

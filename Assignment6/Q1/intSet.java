@@ -10,11 +10,13 @@ final class intSet {
      * @param int [] array
      */
     intSet(int[] array) {
+        // 
         for (int i = 0; i < array.length; i++) {
             arr[array[i]] = true;
         }
     }
 
+     
     /**
      * Constructor of intset class if the input is boolean array
      * 
@@ -31,6 +33,7 @@ final class intSet {
      * @return boolean if it finds the number return true else false
      */
     public boolean isMember(int i) {
+        //
         if (arr[i] == true)
             return true;
         return false;
@@ -56,8 +59,9 @@ final class intSet {
      * @param intSet st which is to be checked as the subset of the current class
      * @return boolean if it is the subset then return true else return false
      */
+
     public boolean isSubSet(intSet st) {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1001; i++) {
             if (!st.arr[i] && this.arr[i])
                 return false;
         }
