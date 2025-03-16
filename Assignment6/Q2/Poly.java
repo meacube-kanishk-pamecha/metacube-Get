@@ -3,7 +3,7 @@ package Q2;
 import java.util.Arrays;
 
 public class Poly {
-    private int[] coeff;
+     int[] coeff;
 
     /**
      * Poly Constructor which is to be used while creating the object
