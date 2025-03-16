@@ -1,7 +1,6 @@
 package Q2;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Poly {
     private int[] coeff;
@@ -145,28 +144,29 @@ public class Poly {
     }
 
 
-    void mutablePoly(){
-        System.out.println("how many more Polynomials you want to add");
-        Scanner Sc = new Scanner(System.in);
-        int n = Sc.nextInt();
-        int [] arr = new int[coeff.length+n];
-        for (int i=0;i<arr.length;i++) {
-            arr[i] =coeff[i];
+    /**
+     * addTerm adds a term in the last of the new array
+     * @param int trm the new term which is to be added in the array
+     */
+    void addTerm(int trm){
+        // in the new array adding the size of the array
+        int [] newarr = Arrays.copyOf(coeff, coeff.length+1);
+        newarr[coeff.length] = trm;
+        coeff = newarr;
+    }
+    /**
+     * deleteTerm deletes the last term of array
+     */
+    void deleteTerm(){
+        if(coeff.length>1){
+            coeff =Arrays.copyOf(coeff,coeff.length-1 );
+
+        }else{
+            coeff = new int[0];
         }
-       for (int i = 0; i < n; i++) {
-        System.out.println("For the value of x"+(i+coeff.length));
-        int newinput = Sc.nextInt();
-        arr[i]=newinput;
-       }
-       coeff = Arrays.copyOf(arr, arr.length);
-       Sc.close();
     }
 
-    void delete(){
-    
-    
-    
-    }
+
     
 
 

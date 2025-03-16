@@ -73,8 +73,21 @@ import org.junit.jupiter.params.provider.MethodSource;
     @ParameterizedTest
     @MethodSource("isSubSetPass")
     public void testSubsetPass(intSet num) {
-        
-        assertTrue( st.isSubSet(num));
+        System.out.println(st.isSubSet(num));
+        assertTrue(num.isSubSet(st));
     }
    
+    private static Stream<Arguments> isSubSetFail() {
+        return Stream.of(
+                Arguments.of( new intSet(new int[]{0,22,35})),
+                Arguments.of(  new intSet(new int[]{66}))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("isSubSetFail")
+    public void testSubsetFail(intSet num) {
+        System.out.println(st.isSubSet(num));
+        assertFalse(num.isSubSet(st));
+    }
 }

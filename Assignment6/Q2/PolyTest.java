@@ -1,6 +1,6 @@
 package Q2;
 
-public class PolyRun {
+public class PolyTest {
     public static void main(String[] args) {
         Poly n1 = new Poly(new int[] { 1, 2, 3, 4 });
         Poly n2 = new Poly(new int[] { 1, 2, 3 });
