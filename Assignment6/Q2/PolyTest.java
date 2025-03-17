@@ -5,20 +5,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.BeforeEach;
+
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class PolyTest {
-    private Poly p1, p2;
-
-    @BeforeEach
-    void setUp() {
-        p1 = new Poly(new int[]{3, 2, 5});  // 3 + 2x + 5x^2
-        p2 = new Poly(new int[]{1, 4, 0, 2}); // 1 + 4x + 0x^2 + 2x^3
-    }
+   
+   
 
     /**
      * Provides test cases for polynomial evaluation.

@@ -14,10 +14,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class MirrorTest {
     private static Mirror m = new Mirror();
-    // public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    // System.out.println( m.maxMirror(new int[]{ 7, 1, 4, 9, 7, 4, 1 }));
-    // }
+    //System.out.println( m.maxMirror(new int[]{ 7, 1, 4, 9, 7, 4, 1 }));
+    }
 
     /**
      * inputandresult which gives the them the input case for testing
