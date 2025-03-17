@@ -38,7 +38,11 @@ public class Multi {
     public static void main(String[] args) {
         MultiVariable poly = new MultiVariable();
         
-          
+        poly.addTerm(3, "x^2");  
+        poly.addTerm(2, "y^3");  
+        
+        poly.addTerm(3, "x^2");  
+        poly.addTerm(2, "y^3");  
         System.out.println(poly);
     }
 }
