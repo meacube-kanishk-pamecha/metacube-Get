@@ -18,21 +18,7 @@ public class Pos {
             result = prime * result + j;
             return result;
         }
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj)
-                return true;
-            if (obj == null)
-                return false;
-            if (getClass() != obj.getClass())
-                return false;
-            Pos other = (Pos) obj;
-            if (i != other.i)
-                return false;
-            if (j != other.j)
-                return false;
-            return true;
-        }
+       
         
 
     

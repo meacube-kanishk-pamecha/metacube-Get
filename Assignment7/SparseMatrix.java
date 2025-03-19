@@ -1,7 +1,7 @@
 import java.util.*;
 public class SparseMatrix {
 
-    boolean square = true;
+    private boolean square = true;
     int row = 0;
     int column = 0;
     // comporator compares the value in the hashmap and keeps in the sorted way
@@ -113,7 +113,7 @@ public class SparseMatrix {
      */
     protected Map<Pos, Integer> multiplication(SparseMatrix sm) {
         Map<Pos, Integer> ans = new TreeMap<>(sorter);
-        // iterating the outer loop for the colums
+        // iterating the outer loop for the columns
         for (int i = 0; i < column; i++) {
             // iterating for the inner loop for the rows of sm object 
             for (int j = 0; j < sm.row; j++) {
