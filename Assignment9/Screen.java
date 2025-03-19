@@ -27,8 +27,8 @@ public class Screen {
      * 
      * @param String str name of the shape which is to be removed
      */
-    public void deleteAll(String str) {
-        shapes.removeIf(shp -> shp.getName().equals(str));
+    public void deleteAll(ShapeTypes str) {
+        shapes.removeIf(shape -> shape.getName().equals(str));
     }
 
     /**

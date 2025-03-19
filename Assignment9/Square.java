@@ -16,8 +16,8 @@ public class Square implements Shapes {
     /**
      * getter for Name
      */
-    public String getName() {
-        return "Square";
+    public ShapeTypes getName() {
+        return ShapeTypes.SQUARE;
     }
 
     /**

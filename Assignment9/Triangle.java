@@ -22,8 +22,8 @@ public class Triangle implements Shapes {
     /**
      * getter for the name
      */
-    public String getName() {
-        return "Triangle";
+    public ShapeTypes getName() {
+        return ShapeTypes.TRIANGLE;
     }
 
     /**
@@ -47,11 +47,37 @@ public class Triangle implements Shapes {
      * @param Point p the point which is to be checked
      * @return boolean as the true 
      */
-    public boolean isPointEnclosed(Point p) {
+    public boolean isPointEnclosed1(Point newPoint) {
         //check for the area from that specific point to all the other side if it is equal to the area of teiangle 
         // return true else return false;
         return true;
     }
+ 
+    static double area(int x1, int y1, int x2, int y2,
+    int x3, int y3)
+{
+return Math.abs((x1*(y2-y3) + x2*(y3-y1)+
+x3*(y1-y2))/2.0);
+}
+
+
+
+public boolean isPointEnclosed(Point  newPoint) {
+/* Calculate area of triangle ABC */
+double A = area (origin.x, origin.y, p2.x, p2.y, p3.x, p3.y);
+
+/* Calculate area of triangle PBC */ 
+double A1 = area (newPoint.x, newPoint.y, p2.x, p2.y, p3.x, p3.y);
+
+/* Calculate area of triangle PAC */ 
+double A2 = area (origin.x, origin.y, newPoint.x, newPoint.y, p2.x, p2.y);
+
+/* Calculate area of triangle PAB */  
+double A3 = area (origin.x, origin.y, p2.x, p2.y, newPoint.x, newPoint.y);
+
+/* Check if sum of A1, A2 and A3 is same as A */
+return (A == A1 + A2 + A3);
+}
 
     /**
      * getter for the date ad time

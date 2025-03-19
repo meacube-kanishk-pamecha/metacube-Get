@@ -31,8 +31,8 @@ public class Rectangle implements Shapes {
     /** 
      * getter for the name
      */
-    public String getName() {
-        return "Rectangle";
+    public ShapeTypes getName() {
+        return ShapeTypes.RECTANGLE;
     }
 
     /**

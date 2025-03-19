@@ -30,8 +30,8 @@ public class Circle implements Shapes {
     /**
      * getter for the name
      */
-    public String getName() {
-        return "Circle";
+    public ShapeTypes getName() {
+        return ShapeTypes.CIRCLE;
     }
 
     /**

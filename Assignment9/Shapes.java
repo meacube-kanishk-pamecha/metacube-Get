@@ -6,6 +6,6 @@ public interface Shapes {
     double getArea();
     double getPerimeter();
     Point getOrigin();
-    String getName();
+    ShapeTypes getName();
     boolean isPointEnclosed(Point p);
 }
