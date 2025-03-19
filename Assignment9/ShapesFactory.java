@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Scanner;
 
 public class ShapesFactory {
     /**
@@ -11,7 +12,7 @@ public class ShapesFactory {
      * @return Object of Shape with the type of shape
      */
     public static Shapes createShape(ShapeTypes type, Point origin, List<Double> params) {
-
+        
         LocalDateTime lt = LocalDateTime.now();
         // switch case to checked which type of object is to be created
         switch (type) {
@@ -24,7 +25,10 @@ public class ShapesFactory {
             case TRIANGLE:
                 return new Triangle(origin, origin, origin, params.get(0), params.get(1), lt);
             case REGULAR_POLYGON:
-                return new Triangle(origin, origin, origin, params.get(0), params.get(1), lt);
+                Scanner sc = new Scanner(System.in);
+                System.out.println("No of sides");
+                int sides = sc.nextInt();
+                return new RegularPolygon(origin, params.get(0), sides,  lt);
             default:
                 throw new IllegalArgumentException("Invalid shape type");
         }

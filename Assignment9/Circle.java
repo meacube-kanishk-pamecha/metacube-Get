@@ -3,7 +3,6 @@ import java.time.LocalDateTime;
 public class Circle implements Shapes {
     private Point origin;
     private double radius;
-
     private LocalDateTime dt;
 
     //constructor for the circle shape

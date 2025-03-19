@@ -27,8 +27,9 @@ public class Triangle implements Shapes {
     }
 
     /**
-     * getter  for the point p2
-     * @return Point p2 
+     * getter for the point p2
+     * 
+     * @return Point p2
      */
     public Point getP2() {
         return p2;
@@ -36,6 +37,7 @@ public class Triangle implements Shapes {
 
     /**
      * getter for the point p3
+     * 
      * @return Point p3
      */
     public Point getP3() {
@@ -44,40 +46,49 @@ public class Triangle implements Shapes {
 
     /**
      * isPointEnclosed function checks the the point is inside this or not
+     * 
      * @param Point p the point which is to be checked
-     * @return boolean as the true 
+     * @return boolean as the true
      */
     public boolean isPointEnclosed1(Point newPoint) {
-        //check for the area from that specific point to all the other side if it is equal to the area of teiangle 
+        // check for the area from that specific point to all the other side if it is
+        // equal to the area of teiangle
         // return true else return false;
         return true;
     }
- 
+
+    /**
+     * area return the area of the triangle with 3 coordinates
+     * @param int x1 x coordinate of 1 point
+     * @param int y1 y coordinate of 1 point
+     * @param int x2 x coordinate of 2 point
+     * @param int y2 y coordinate of 2 point
+     * @param int x3 x coordinate of 3 point
+     * @param int y3 y coordinate of 3 point
+     * @return double area of the square
+     */
     static double area(int x1, int y1, int x2, int y2,
-    int x3, int y3)
-{
-return Math.abs((x1*(y2-y3) + x2*(y3-y1)+
-x3*(y1-y2))/2.0);
-}
+            int x3, int y3) {
+        return Math.abs((x1 * (y2 - y3) + x2 * (y3 - y1) +
+                x3 * (y1 - y2)) / 2.0);
+    }
 
+    public boolean isPointEnclosed(Point newPoint) {
+        /* Calculate area of triangle ABC */
+        double A = area(origin.x, origin.y, p2.x, p2.y, p3.x, p3.y);
 
+        /* Calculate area of triangle PBC */
+        double A1 = area(newPoint.x, newPoint.y, p2.x, p2.y, p3.x, p3.y);
 
-public boolean isPointEnclosed(Point  newPoint) {
-/* Calculate area of triangle ABC */
-double A = area (origin.x, origin.y, p2.x, p2.y, p3.x, p3.y);
+        /* Calculate area of triangle PAC */
+        double A2 = area(origin.x, origin.y, newPoint.x, newPoint.y, p2.x, p2.y);
 
-/* Calculate area of triangle PBC */ 
-double A1 = area (newPoint.x, newPoint.y, p2.x, p2.y, p3.x, p3.y);
+        /* Calculate area of triangle PAB */
+        double A3 = area(origin.x, origin.y, p2.x, p2.y, newPoint.x, newPoint.y);
 
-/* Calculate area of triangle PAC */ 
-double A2 = area (origin.x, origin.y, newPoint.x, newPoint.y, p2.x, p2.y);
-
-/* Calculate area of triangle PAB */  
-double A3 = area (origin.x, origin.y, p2.x, p2.y, newPoint.x, newPoint.y);
-
-/* Check if sum of A1, A2 and A3 is same as A */
-return (A == A1 + A2 + A3);
-}
+        /* Check if sum of A1, A2 and A3 is same as A */
+        return (A == A1 + A2 + A3);
+    }
 
     /**
      * getter for the date ad time
