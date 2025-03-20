@@ -9,7 +9,7 @@ public class RegularPolygon implements Shapes {
         private LocalDateTime dt;
     
         /** 
-         * Constructor for thr Rectangle shape
+         * Constructor for thr RegularPolygon
          */
         public RegularPolygon(Point origin, double length, int sides, LocalDateTime dt) {
             this.origin = origin;
