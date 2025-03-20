@@ -1,0 +1,19 @@
+Entities : Attributes
+		
+	 User : UserId , UserName ,UserDetails
+	 Product : ProductId, ProductName , Price , 
+	 Images : ImageId
+	 Categories  : CategoryId , CategoryName
+	 Order : OrderId , Amount , OrderDetails
+	 OrderItem : UId, OrderId , Status
+	 
+	 
+	 
+Relationship :
+	 
+	User to product : 1 to Many
+	User to Order : 1 to Many
+	Order to OrderId : 1 to Many
+	Product to Order : Many to Many
+	Product to Images : 1 to Many
+	
