@@ -1,19 +1,23 @@
-Entities : Attributes
-		
-	 User : UserId , UserName ,UserDetails
-	 Product : ProductId, ProductName , Price , 
-	 Images : ImageId
-	 Categories  : CategoryId , CategoryName
-	 Order : OrderId , Amount , OrderDetails
-	 OrderItem : UId, OrderId , Status
+Entities & Relations:
+
+Product (Has Images, Belongs to Multiple Categories)
+
+Category (Nested Structure)
+
+User (Shopper/Admin)
+
+Shopper (Places Orders, Has Multiple Shipping Addresses)
+
+Order (Contains Products, Items Can Be Shipped/Canceled/Returned)
+
+
 	 
-	 
-	 
-Relationship :
-	 
-	User to product : 1 to Many
-	User to Order : 1 to Many
-	Order to OrderId : 1 to Many
-	Product to Order : Many to Many
-	Product to Images : 1 to Many
+Product - Category [ Many-to-Many].
+Category - Category [Hierarchical] 
+Product - Image [ One-to-Many ]
+User - Shopper/Admin [ One-to-One ]
+Shopper - Order [ One-to-Many] 
+Order - Product [ Many-to-Many].
+Shopper - Shipping Address [One-to-Many] .
+
 	
