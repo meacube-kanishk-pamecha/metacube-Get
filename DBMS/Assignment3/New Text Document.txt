@@ -1,0 +1,65 @@
+
+--  Zip Code, City, and State Relationship
+CREATE TABLE State (
+    StateId INT PRIMARY KEY AUTO_INCREMENT,
+    StateName VARCHAR(50) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE City (
+    CityId INT PRIMARY KEY AUTO_INCREMENT,
+    CityName VARCHAR(50) NOT NULL,
+    StateId INT NOT NULL,
+    FOREIGN KEY (StateId) REFERENCES State(StateId) ON DELETE CASCADE
+);
+
+
+CREATE TABLE ZipCode (
+    ZipCodeId INT PRIMARY KEY,
+    CityId INT NOT NULL,
+    FOREIGN KEY (CityId) REFERENCES City(CityId) ON DELETE CASCADE
+);
+
+-- Insert Rajasthan as a State
+INSERT INTO State (StateName) VALUES ('Rajasthan');
+
+
+-- Insert 3 Cities in Rajasthan
+INSERT INTO City (CityName, StateId) VALUES
+('Jaipur', (SELECT StateId FROM State WHERE StateName = 'Rajasthan')),
+('Jodhpur', (SELECT StateId FROM State WHERE StateName = 'Rajasthan')),
+('Udaipur', (SELECT StateId FROM State WHERE StateName = 'Rajasthan'));
+
+-- Insert Zip Codes for Rajasthan Cities
+INSERT INTO ZipCode (ZipCodeId, CityId) VALUES
+(302022, (SELECT CityId FROM City WHERE CityName = 'Jaipur')),
+(342021, (SELECT CityId FROM City WHERE CityName = 'Jodhpur')),
+(313023, (SELECT CityId FROM City WHERE CityName = 'Udaipur'));
+
+SELECT Z.ZipCodeId, C.CityName, S.StateName
+FROM ZipCode Z
+JOIN City C ON Z.CityId = C.CityId
+JOIN State S ON C.StateId = S.StateId
+ORDER BY S.StateName, C.CityName;
+
+
+-- Create a view displaying the order information (Id, Title, Price, Shopper’s name, Email, Orderdate, Status) with latest ordered items should be displayed first for last 60 days.
+
+CREATE VIEW OrderView AS
+SELECT O.OrderId, P.ProductName, P.Price, U.NameUser,  O.OrderDate, OI.StatusOrder
+FROM OrderT O
+JOIN Users U ON O.UserId = U.UserId
+JOIN OrderItem OI ON O.OrderId = OI.OrderId
+JOIN Product P ON OI.ProductId = P.ProId
+WHERE O.OrderDate >= (CURRENT_DATE - INTERVAL 60 DAY)
+ORDER BY O.OrderDate DESC;
+
+-- Use the above view to display the Products(Items) which are in ‘shipped’ state
+SELECT * FROM OrderView WHERE StatusOrder = 'SHIPED';
+
+-- Use the above view to display the top 5 most selling products.
+SELECT ProductName, COUNT(OrderId) AS OrderCount
+FROM OrderView
+GROUP BY ProductName
+ORDER BY OrderCount DESC
+LIMIT 5;
