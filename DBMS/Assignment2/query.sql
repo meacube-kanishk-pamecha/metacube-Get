@@ -14,7 +14,8 @@ CREATE TABLE Product(
  ProductName VARCHAR(50),
  Price INT, 
  TimeAdd TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
- Stock INT ); 
+ Stock INT 
+ ); 
  
 CREATE TABLE Image (
  ImageId INT PRIMARY KEY,
@@ -39,10 +40,10 @@ StatusOrder ENUM('SHIPED','CANCELED','PENDING'),
  FOREIGN KEY (ProductId) REFERENCES Product(ProId));
  
 CREATE TABLE Category(
-CategoryId INT NOT NULL PRIMARY KEY AUTO_INCREMENT , 
-NameCate VARCHAR(30),
- ProductCategory INT , 
-  FOREIGN KEY (ProductCategory) REFERENCES Category(CategoryId));
+	CategoryId INT NOT NULL PRIMARY KEY AUTO_INCREMENT , 
+	NameCate VARCHAR(30),
+	ProductCategory INT , 
+FOREIGN KEY (ProductCategory) REFERENCES Category(CategoryId));
  
 CREATE TABLE ShippingAddress(
 ShippingAddressId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
@@ -90,26 +91,30 @@ SELECT * from Category;
 SELECT * from Product;
 
 INSERT INTO Pro_category (PCId , ProductId ,CategoryId ) VALUES
-(1, 1, 2),
-(2, 2, 3),
-(3, 3, 4),
-(4, 4, 3),
-(5, 5, 5),
-(6, 6, 1);
+-- (1, 1, 2),
+-- (2, 2, 3),
+-- (3, 3, 4),
+-- (4, 4, 3),
+-- (5, 5, 5),
+-- (6, 6, 1),
+(7, 6, 4);
 -- Insert Orders
 INSERT INTO OrderT (UserId, AMOUNT,OrderDate) VALUES
 (2, 999,'2025-03-20'),
 (1, 14999,'2025-02-24'),
-(2, 62999,'2025-02-10'),
+(3, 10,'2025-02-01'),
 (2, 999,'2025-03-20'),
 (3, 19999,'2025-03-24');
-
+select * from ordert;
 -- Insert Order Items
 INSERT INTO OrderItem (OrderId, AMOUNT, ProductId, StatusOrder) VALUES
-(4, 1, 1, 'PENDING'),
-(4, 1, 1, 'SHIPED'),
-(5, 1, 2, 'PENDING'),
-(6, 1, 3, 'CANCELED');
+(4, 10000, 1, 'PENDING'),
+(4, 100, 1, 'SHIPED'),
+(5, 100, 2, 'PENDING'),
+(6, 1405, 3, 'CANCELED'),
+(4, 100, 1, 'SHIPED'),
+(6, 100, 2, 'PENDING'),
+(7, 1405, 3, 'CANCELED');
 
 -- Insert Categories (Mobile Category and Subcategories)
 INSERT INTO Category (NameCate, ProductCategory) VALUES
@@ -128,7 +133,7 @@ INSERT INTO ShippingAddress (UserId, Address) VALUES
 -- Display Id, Title, Category Title, Price of the products which are Active and recently added products should be at top.
 select ProductName , Price 
  FROM  Product WHERE Stock > 0 
- ORDER BY TimeAdd ASC ;
+ ORDER BY TimeAdd ASC;
 
 -- Display the list of products which don't have any images.
 SELECT ProductName , Price
@@ -142,13 +147,16 @@ SELECT ProductName , Price , Stock
 FROM  Product
 WHERE Stock < 50;
 
+select *  FROM Category;
  -- Display all Id, Title and Parent Category Title for all the Categories listed, sorted by Parent Category Title and then Category Title. 
- SELECT C1.CategoryId,C1.NameCate ,COALESCE(C2.NameCate, "Top Category") AS Parent_Category  FROM Category C1
+ SELECT C1.CategoryId , C1.NameCate , COALESCE(C2.NameCate,"Top Category") AS Parent_Category  FROM Category C1
  LEFT JOIN Category C2 ON C1.ProductCategory = C2.CategoryId  order by Parent_Category ,  C1.NameCate;
  
  -- Display Id, Title, Parent Category Title of all the leaf Categories (categories which are not parent of any other category)
 SELECT CategoryId, NameCate FROM Category
-WHERE CategoryId NOT IN (SELECT DISTINCT ProductCategory FROM Category WHERE ProductCategory IS NOT NULL);
+WHERE CategoryId 
+NOT IN (
+SELECT DISTINCT ProductCategory FROM Category WHERE ProductCategory IS NOT NULL);
 
  -- Display Product Title, Price & Description which falls into particular category Title (i.e. “Mobile”)
 SELECT P.ProductName, P.Price
@@ -169,6 +177,7 @@ SELECT  OrderId, AMOUNT, OrderDate
 FROM OrderT  
 ORDER BY AMOUNT Desc
 LIMIT 10 ;
+
 -- Display all the Orders which are placed more than 10 days old and one or more items from those orders are still not shipped.
 SELECT DISTINCT O.OrderId, O.OrderDate, O.AMOUNT
 FROM OrderT O
