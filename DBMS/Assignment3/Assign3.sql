@@ -8,13 +8,13 @@ CREATE TABLE state (
     id INT PRIMARY KEY AUTO_INCREMENT,
     stateid INT,
     name VARCHAR(20),
-    CONSTRAINT FOREIGN KEY (stateid)
+	FOREIGN KEY (stateid)
 	REFERENCES state (id)
 );
   CREATE TABLE zipCode (
     zipCode INT PRIMARY KEY,
     cityid INT,
-    CONSTRAINT FOREIGN KEY (cityid)
+   FOREIGN KEY (cityid)
 	REFERENCES city (id)
 );
   insert into state (name) values ("Rajasthan");
