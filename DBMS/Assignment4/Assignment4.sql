@@ -24,7 +24,7 @@ delimiter //
 CREATE FUNCTION max_order(year_num int) RETURNS INT deterministic
 BEGIN 
 declare num int;
-  SELECT month(ORDERDATE) num   FROM ORDERT 
+  SELECT month(ORDERDATE) INTO num   FROM ORDERT 
  WHERE  YEAR(ORDERDATE) = year_num 
  group by month(ORDERDATE)
  order by count(*)desc

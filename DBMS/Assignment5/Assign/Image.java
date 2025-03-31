@@ -1,6 +1,7 @@
 import java.sql.*;
 public class Image {
-    public static void insertImages(Connection conn, Object[][] data) throws SQLException {
+    public static void insertImages( Object[][] data) throws SQLException,ClassNotFoundException {
+       try(Connection conn = Solution.getConnection()){
         PreparedStatement ps = conn.prepareStatement(Queries.insert_image);
         for (Object[] row : data) {
             ps.setInt(1, (int) row[0]);
@@ -14,4 +15,5 @@ public class Image {
         }
         ps.close();
     }
+}
 }

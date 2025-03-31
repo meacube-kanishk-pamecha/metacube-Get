@@ -1,13 +1,21 @@
 import java.sql.*;
+import java.util.*;
 public class FetchOrder {
-    public static void fetchOrders(Connection conn, int userId) throws SQLException {
-        PreparedStatement ps = conn.prepareStatement(Queries.fetch);
-        ps.setInt(1, userId);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            System.out.println(rs.getString(1) + " : " + rs.getString(2) + " : " + rs.getString(3));
+    public static List<Orders> fetchOrders(int userId) throws SQLException, ClassNotFoundException {
+        List<Orders> list = new ArrayList<>();
+        try(Connection conn = Solution.getConnection();){
+            PreparedStatement stat = conn.prepareStatement(Queries.fetch);
+            stat.setInt(1, userId);
+
+            ResultSet rs = stat.executeQuery();
+            while(rs.next()){
+                Orders o = new Orders(rs.getInt(1), rs.getString(2), rs.getDouble(3));
+                System.out.println(o);
+                list.add(o);
+            }
+            
         }
-        rs.close();
-        ps.close();
+        return list;
     }
+
 }
