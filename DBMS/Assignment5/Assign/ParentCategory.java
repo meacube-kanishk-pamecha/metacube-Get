@@ -4,7 +4,7 @@ public class ParentCategory {
         Statement st = conn.createStatement();
         ResultSet rs = st.executeQuery(Queries.fetch_parent);
         while (rs.next()) {
-            System.out.println(rs.getString(1) + " - Child Count: " + rs.getInt(2));
+            System.out.println(rs.getString(1) + " : " + rs.getInt(2));
         }
         rs.close();
         st.close();

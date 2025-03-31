@@ -6,21 +6,21 @@ class Solution {
         String password = "root";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, userName, password);
+            Connection ct = DriverManager.getConnection(url, userName, password);
             Object[][] imageData = {
-                    { 50, 1, "https://linkKanishk" },
-                    { 51, 1, "https://linkKanishk" },
-                    { 52, 1, "https://linkKanishk" },
-                    { 53, 1, "https://linkKanishk" },
-                    { 54, 1, "https://linkKanishk" },
-                    { 55, 1, "https://linkKanishk" },
-                    { 56, 1, "https://linkKanishk" }
+                    { 21, 1, "https://linkKanishk" },
+                    { 11, 1, "https://linkKanishk" },
+                    { 10, 1, "https://linkKanishk" },
+                    { 20, 1, "https://linkKanishk" },
+                    { 30, 1, "https://linkKanishk" },
+                    { 47, 1, "https://linkKanishk" },
+                    { 88, 1, "https://linkKanishk" }
             };
-            Image.insertImages(conn, imageData);
-            FetchOrder.fetchOrders(conn, 2);
-            DeleteProduct.deleteUnusedProducts(conn);
-            ParentCategory.fetchParentCategories(conn);
-            conn.close();
+            // Image.insertImages(ct, imageData);
+            FetchOrder.fetchOrders(ct, 2);
+            DeleteProduct.deleteUnusedProducts(ct);
+            ParentCategory.fetchParentCategories(ct);
+            ct.close();
             System.out.println("Connection closed.");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
