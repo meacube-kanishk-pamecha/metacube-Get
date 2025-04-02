@@ -9,6 +9,7 @@ public class Polynomial {
         Scanner Sc = new Scanner(System.in);
         System.out.println("Enter the nu in term ");
         int n = Sc.nextInt();
+        // taking the input from the end user
         for(int i =0;i<n;i++)
         {
             List<Poly> ans = new ArrayList<>();
@@ -16,6 +17,7 @@ public class Polynomial {
             int a = Sc.nextInt();
             System.out.println("number of Variable");
             int k = Sc.nextInt();
+            // taking the variables in list and their powers
             for(int j =0;j<k;j++){
                 System.out.println("Eneter the Variable");
                 char newchar = Sc.next().charAt(0);
@@ -45,6 +47,7 @@ public class Polynomial {
   }
 }
 
+// poly class to store the variables and their power
 class Poly{
     char c;
     int x;
@@ -58,6 +61,7 @@ class Poly{
     }
 
 }
+// to store coff and its variables or the list of variables
 class polyno{
     int coeff;
     List<Poly> ans = new ArrayList<>();
