@@ -34,6 +34,11 @@ public class Polynomial {
         System.out.println(degree(newList));
         Sc.close();
     }
+    /**
+     * degree checking the degree of the polynomial
+     * @param List<polyno> newList which has to be evaluated
+     * @return int the degree of max  from the polynomial
+     */
   public static int degree( List<polyno> newList ){
     int max =0;
     for (polyno polyno : newList) {
