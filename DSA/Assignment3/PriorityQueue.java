@@ -10,6 +10,9 @@ public class PriorityQueue {
     class priorityQueueArray<T extends Comparable<T>> implements pQueue<T> {
         private int size = 0;
         private T[] arr = (T[]) new Comparable[10];
+        /**
+         * heapify the main process of heap to  re arrange the heap in order to sort the heap
+         */
         @Override
         public void heapify() {
             int i = 0;
@@ -29,6 +32,10 @@ public class PriorityQueue {
             }
         }
 
+        /**
+         * add it add the element to the heap
+         * @param T t the element to be added in the heap
+         */
         @Override
         public void add(T t) {
             if (size >= arr.length) {
@@ -42,6 +49,10 @@ public class PriorityQueue {
                 current = (current - 1) / 2;
             }
         }
+     
+        /**
+         * contains it checks the given value is present in the heap or not
+         */
         @Override
         public boolean contains(T t) {
             for (int i = 0; i < size; i++) {
@@ -49,6 +60,9 @@ public class PriorityQueue {
             }
             return false;
         }
+        /**
+         * remove it removes the top element either minimum or maximum
+         */
         @Override
         public T remove() {
             if (size == 0) return null;
@@ -58,6 +72,11 @@ public class PriorityQueue {
             heapify();
             return root;
         }
+        /**
+         * swap the values from index i to j and vice versa
+         * @param  int i position of 1 element
+         * @param int j position of 2 element
+         */
         private void swap(int i, int j) {
             T temp = arr[i];
             arr[i] = arr[j];

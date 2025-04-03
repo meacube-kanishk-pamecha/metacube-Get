@@ -12,16 +12,18 @@ public class ViratKohli {
         System.out.println("Enter the number of balls Virat play");
         int ballsRemainingVK = sc.nextInt();
 
+        // priority Queue to store the bowler
         PriorityQueue<Bowler> pq = new PriorityQueue<>();
 
-        System.out.println("Enter bowler names and their balls ");
+        System.out.println("Enter bowler names and their bowl ");
+        // taking the input of the number of bowlers 
         for (int i = 0; i < noOfBowlers; i++) {
             String name = sc.next();
             int quota = sc.nextInt();
             pq.add(new Bowler(name, quota));
         }
 
-       
+       // if the virat kohli can play more balls or not and the ballers have balls 
         while (ballsRemainingVK > 0 && !pq.isEmpty()) {
             Bowler b = pq.poll();
             System.out.print(b.name + " ");
