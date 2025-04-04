@@ -1,8 +1,7 @@
 public class PriorityQueue {
     interface pQueue<T extends Comparable<T>> {
-        void heapify();
+        T peek();
         void add(T t);
-        boolean contains(T t);
         T remove();
     }
 
@@ -11,26 +10,13 @@ public class PriorityQueue {
         private int size = 0;
         private T[] arr = (T[]) new Comparable[10];
         /**
-         * heapify the main process of heap to  re arrange the heap in order to sort the heap
+         * peek method to get the top element 
          */
-        @Override
-        public void heapify() {
-            int i = 0;
-            while (2*i+1< size) {
-                int left = 2*i+1;
-                int right = 2*i+2;
-                int smallest = left;
-                if (right < size && arr[right].compareTo(arr[left]) < 0) {
-                    smallest = right;
-                }
-                if (arr[i].compareTo(arr[smallest]) > 0) {
-                    swap(i, smallest);
-                    i = smallest;
-                } else {
-                    break;
-                }
-            }
-        }
+        
+         @Override
+         public T peek() {
+             return arr[0];
+         }
 
         /**
          * add it add the element to the heap
@@ -50,16 +36,7 @@ public class PriorityQueue {
             }
         }
      
-        /**
-         * contains it checks the given value is present in the heap or not
-         */
-        @Override
-        public boolean contains(T t) {
-            for (int i = 0; i < size; i++) {
-                if (arr[i].equals(t)) return true;
-            }
-            return false;
-        }
+       
         /**
          * remove it removes the top element either minimum or maximum
          */
@@ -69,7 +46,21 @@ public class PriorityQueue {
             T root = arr[0];
             arr[0] = arr[size - 1];
             size--;
-            heapify();
+            int i = 0;
+            while (2*i+1< size) {
+                int left = 2*i+1;
+                int right = 2*i+2;
+                int smallest = left;
+                if (right < size && arr[right].compareTo(arr[left]) < 0) {
+                    smallest = right;
+                }
+                if (arr[i].compareTo(arr[smallest]) > 0) {
+                    swap(i, smallest);
+                    i = smallest;
+                } else {
+                    break;
+                }
+            }
             return root;
         }
         /**
