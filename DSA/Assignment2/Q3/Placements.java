@@ -32,7 +32,7 @@ public class Placements {
         for (Students students : studentsList) {
             studentsQueue.offer(students);
         }
-        //
+        // going through each student
         while (!studentsQueue.isEmpty()) {
             Students s = studentsQueue.remove();
             // checking the avilable seats
