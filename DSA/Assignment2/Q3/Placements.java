@@ -50,7 +50,7 @@ public class Placements {
 
         }
 
-        // print the values in the map
+        // print the values that are in the map
         for (Students s : ans.keySet()) {
             System.out.println(s + "" + ans.get(s));
         }
