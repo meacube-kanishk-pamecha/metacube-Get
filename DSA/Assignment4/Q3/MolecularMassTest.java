@@ -24,9 +24,9 @@ class MolecularMassTest {
     }
     
     /**
-     * testClass 
-     * @param  String formula 
-     * @param result
+     * testClass  runs test cases for the molecular mass class
+     * @param  String formula contains the molecular formula of each elements 
+     * @param result what is the expected outcome for provided input
      */
     @ParameterizedTest
     @MethodSource("args")

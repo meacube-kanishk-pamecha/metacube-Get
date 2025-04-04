@@ -20,9 +20,9 @@ public class UniqueChar {
             HashSet<Character> charmemory = new HashSet<>();
             // checkin that character is present in hashset or not 
             for (char character: c) {
-                if (!charmemory.contains(character)) {
+               
                     charmemory.add(character);                  
-                }
+                
             }
              a = charmemory.size();
             stringChars.put(s, a);
