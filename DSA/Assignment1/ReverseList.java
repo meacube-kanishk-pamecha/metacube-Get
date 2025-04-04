@@ -26,21 +26,26 @@ public class ReverseList {
         Node temp = new Node(0);
         temp.next = head;
         Node prev = temp;
+        // finding the starting of the list to reversed
         for (int i = 1; i < L; i++) {
             prev = prev.next;
         }
         Node sHead = prev.next;
         Node sTail = sHead;
+        // seprating the list 
         for (int i = L; i < R; i++) {
             sTail = sTail.next;
         }
         Node Listafter = sTail.next;
         sTail.next = null;
+        // rotating the center list 
         Node rotatedSublist = rotateR(sHead, N, R - L + 1);
         prev.next = rotatedSublist;
+        // finding the end of the list
         while (prev.next != null) {
             prev = prev.next;
         }
+        // connecting the list
         prev.next = Listafter;
         return temp.next;
     }
@@ -59,7 +64,7 @@ public class ReverseList {
         for (int i = 0; i < k; i++) {
             fast = fast.next;
         }
-
+        // finding the point from where it is to be rotated
         while (fast.next != null) {
             slow = slow.next;
             fast = fast.next;
