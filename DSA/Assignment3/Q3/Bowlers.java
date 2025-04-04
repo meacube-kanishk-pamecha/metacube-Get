@@ -1,5 +1,5 @@
 package Q3;
-
+// bowler class to create the objects of the bowler
 class Bowler implements Comparable<Bowler> {
     String name;
     int balls;

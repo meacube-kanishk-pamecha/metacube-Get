@@ -79,6 +79,10 @@ public class Dir {
      * bk return to the parent element
      */
     void bk() {
+        if (curr.size() == 0) {
+            System.out.println("Root Directory");
+            return;
+        }
         curr.remove(curr.size() - 1);
 
     }
@@ -94,10 +98,11 @@ public class Dir {
 
     List<Node> find(String s, Node currFind, List<Node> listCurr) {
         if (s.equals(currFind.Name)) {
-             listCurr.add(currFind);
+            listCurr.add(currFind);
             return listCurr;
         }
-        
+        // going inside each sub Directory and finding the file or directory with
+        // soecified name
         for (Node node : currFind.list) {
             listCurr.add(node);
             List<Node> found = find(s, node, listCurr);
@@ -158,20 +163,22 @@ public class Dir {
         }
     }
 
+    /**
+     * tree function that calls tree for printing in the vcmd
+     */
     void tree() {
         tree(root, "", true, true);
-    }
-    void remove(String s){
-        System.out.println("removing directory");
     }
 
     public static void main(String[] args) {
         Scanner Sc = new Scanner(System.in);
         Dir d = new Dir();
         d.print();
+        // Infinite loop
         while (true) {
             String s = Sc.nextLine();
             String[] arr = s.split("\\s");
+            // matching the commands given by the user
             switch (arr[0]) {
                 case "cd":
                     d.cd(arr[1]);
@@ -195,6 +202,7 @@ public class Dir {
                     break;
                 case "find":
                     List<Node> found = d.find(arr[1]);
+                    // found a directory with that name or not
                     if (found != null) {
                         System.out.println("Found directory: " + found);
                     } else {
@@ -209,6 +217,7 @@ public class Dir {
 
                 default:
                     System.out.println("enter valid keyword");
+                    d.print();
                     break;
             }
 

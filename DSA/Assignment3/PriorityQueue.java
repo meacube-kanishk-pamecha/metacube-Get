@@ -1,25 +1,29 @@
 public class PriorityQueue {
+    // interface of the priority Queue
     interface pQueue<T extends Comparable<T>> {
         T peek();
+
         void add(T t);
+
         T remove();
     }
-
 
     class priorityQueueArray<T extends Comparable<T>> implements pQueue<T> {
         private int size = 0;
         private T[] arr = (T[]) new Comparable[10];
+
         /**
-         * peek method to get the top element 
+         * peek method to get the top element
          */
-        
-         @Override
-         public T peek() {
-             return arr[0];
-         }
+
+        @Override
+        public T peek() {
+            return arr[0];
+        }
 
         /**
          * add it add the element to the heap
+         * 
          * @param T t the element to be added in the heap
          */
         @Override
@@ -35,21 +39,21 @@ public class PriorityQueue {
                 current = (current - 1) / 2;
             }
         }
-     
-       
+
         /**
          * remove it removes the top element either minimum or maximum
          */
         @Override
         public T remove() {
-            if (size == 0) return null;
+            if (size == 0)
+                return null;
             T root = arr[0];
             arr[0] = arr[size - 1];
             size--;
             int i = 0;
-            while (2*i+1< size) {
-                int left = 2*i+1;
-                int right = 2*i+2;
+            while (2 * i + 1 < size) {
+                int left = 2 * i + 1;
+                int right = 2 * i + 2;
                 int smallest = left;
                 if (right < size && arr[right].compareTo(arr[left]) < 0) {
                     smallest = right;
@@ -63,9 +67,11 @@ public class PriorityQueue {
             }
             return root;
         }
+
         /**
          * swap the values from index i to j and vice versa
-         * @param  int i position of 1 element
+         * 
+         * @param int i position of 1 element
          * @param int j position of 2 element
          */
         private void swap(int i, int j) {
@@ -75,7 +81,7 @@ public class PriorityQueue {
         }
     }
 
-
+    // main function
     public static void main(String[] args) {
         System.out.println("We are making a priority queue");
         PriorityQueue pq = new PriorityQueue();
@@ -85,7 +91,6 @@ public class PriorityQueue {
         minHeap.add(8);
         minHeap.add(1);
         System.out.println(minHeap.remove());
-        System.out.println(minHeap.remove()); 
+        System.out.println(minHeap.remove());
     }
 }
-
