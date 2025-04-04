@@ -275,7 +275,7 @@ class Eval {
 
 public class StackInterface {
 
-    // main class
+    // main function
     public static void main(String[] args) {
         Eval e = new Eval();
         System.out.println(e.evaluate("5 + 10 <=  0"));
