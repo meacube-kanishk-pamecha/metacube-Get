@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Placements {
     public static void main(String[] args) {
-        
+
         // for Storing the data
         HashMap<String, Integer> program = new HashMap<>();
         List<Students> studentsList = new ArrayList<>();
         HashMap<Students, Programs> ans = new HashMap<>();
 
-        //  adding the programs
+        // adding the programs
         Programs p1 = new Programs("CSE", 1);
         Programs p2 = new Programs("IT", 10);
         program.put(p1.course, p1.seats);
@@ -32,7 +32,7 @@ public class Placements {
         for (Students students : studentsList) {
             studentsQueue.offer(students);
         }
-        // 
+        //
         while (!studentsQueue.isEmpty()) {
             Students s = studentsQueue.remove();
             // checking the avilable seats
