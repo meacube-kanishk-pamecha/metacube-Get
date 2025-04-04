@@ -27,7 +27,7 @@ class StackArr<T> implements Stack<T> {
     }
 
     /**
-     * peek return the
+     * peek return the top element
      */
     @Override
     public T peek() {
