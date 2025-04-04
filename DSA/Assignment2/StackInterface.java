@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-// interface stack of generic tyep t 
+// interface stack of generic tyep T
 interface Stack<T> {
     void push(T element);
 
@@ -16,10 +16,10 @@ class StackArr<T> implements Stack<T> {
     private ArrayList<T> list = new ArrayList<>();
 
     /**
-     * push overides the push function of stack
+     * push overides the push function of stack to add it in the stack
      * 
-     * @param T element of type element T
-     * @return void
+     * @param T element of type element T to be added in the stack
+     * @return void nothing is returned
      */
     @Override
     public void push(final T element) {
