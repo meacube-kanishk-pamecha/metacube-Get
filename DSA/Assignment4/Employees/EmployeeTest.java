@@ -1,4 +1,4 @@
-package Q1;
+package Employees;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,8 +48,8 @@ public class EmployeeTest {
 // sorting the Employee class objects on the basis of Id
 class sortById implements Comparator<Employee> {
     @Override
-    public int compare(Employee o1, Employee o2) {
-        return o1.empId - o2.empId;
+    public int compare(Employee e1, Employee e2) {
+        return e1.empId - e2.empId;
     }
 }
 
