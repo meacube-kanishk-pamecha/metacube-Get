@@ -67,7 +67,7 @@ public class MolecularMass {
      * @param String s the String is the molecule
      * @return int return molecular mass of the molecule
      */
-    public static int molecularMass(String s) {
-        return mass(s.toCharArray(), 0, s.length());
+    public static int molecularMass(String formula) {
+        return mass(formula.toCharArray(), 0, formula.length());
     }
 }
