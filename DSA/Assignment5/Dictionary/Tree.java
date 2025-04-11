@@ -124,12 +124,16 @@ public class Tree implements Dictionary, Comparable<Tree> {
         if (curr == null)
             return null;
         int cmp = key.compareTo(curr.key);
-        if (cmp == 0)
-            return curr.value;
-        else if (cmp < 0)
-            return get(curr.left, key);
-        else
-            return get(curr.right, key);
+
+        // checking key is smaller or grater then current node
+        switch (cmp) {
+            case 0:
+                return curr.value;
+            case -1:
+                return get(curr.left, key);
+            default:
+                return get(curr.right, key);
+        }
     }
 
     /**
