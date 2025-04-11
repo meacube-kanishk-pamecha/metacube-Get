@@ -4,7 +4,6 @@ public class Test {
     public static void main(String[] args) {
         System.out.println("Dictionary");
         
-        
         Tree t = new Tree("Zpple", "Fruit of hthe");
         t.add(t, new Tree("Aa", "kdsjdk"));
         t.add(t, new Tree("Zall", "Anything"));
