@@ -125,7 +125,10 @@ input::-webkit-outer-spin-button {
     border-radius: 20px;
     display: flex;
     background-color: #fefefe;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    height: 400px;
+    padding-top: 5%;
+    margin-top: 5px
 }
 
 .FeedbackSubit {
@@ -133,6 +136,9 @@ input::-webkit-outer-spin-button {
     margin-left: 60px
 }
 
+.addHeading{
+    display:flex;justify-content:center
+}
 .collapsible {
     background-color: #eee;
     color: #444;
@@ -182,6 +188,20 @@ input::-webkit-outer-spin-button {
     margin: 0
 }
 
+.packPricing {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 0, 0, .708)
+}
+
+.pricing_main {
+    display: grid;
+    align-self: center;
+    justify-content: center
+}
+
 .purchaseButton {
     background-color: #fff;
     color: #5555b2;
@@ -194,3 +214,25 @@ input::-webkit-outer-spin-button {
     color: #fff;
     border: 1px solid #5555b2
 }
+
+       
+#btnControl{
+    display:none;
+}#btnControl1{
+    display:none;
+}
+
+
+.toggleLabel {
+    cursor: pointer;
+    background-color: #06425c;
+    width: 100%;
+    height: 50px;
+  }
+#btnControl:checked ~ #addEmployee  {
+    display: none;
+  }
+
+#btnControl1:checked ~ #addVehicle  {
+    display: none;
+  }

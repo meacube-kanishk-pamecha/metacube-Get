@@ -4,28 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="https://www.metacube.com/favicon.ico">
+    <link rel=stylesheet href="index.css">
     <title>MetaCube</title>
 </head>
 
 <body style=margin:0>
     <!-- Navbar -->
     <nav>
-        <div><img alt="Metacube Europe"
+        <div>
+            <img alt=Metacube
                 src=https://europe.metacube.com/wp-content/uploads/2022/04/cropped-LogoMetacube_2786-1.png
                 class=custom-logo height=40></div>
-        <div class=addContent><a href=.>ADD Employee</a> <a href=#addVehicle>Add Vehicle</a> <a href=#addFeedback>Give
-                Feedback</a> <a href=#pricing>Pricing</a></div>
+        <div class=addContent>
+            <a href=#addEmployee>ADD Employee</a>
+             <a href=#addVehicle>Add Vehicle</a> 
+             <a href=#addFeedback>Give Feedback</a>
+             <a href=#pricing>Pricing</a>
+        </div>
     </nav>
     <main>
+
         <!-- Image Section or Hero Section -->
-        <div id=Hero><img alt="" src=https://europe.metacube.com/wp-content/themes/metacube/assets/img/slide1-image.png>
+        <div id=Hero>
+            <img alt="Metacube main" src=https://europe.metacube.com/wp-content/themes/metacube/assets/img/slide1-image.png>
         </div>
-        <!-- Add Employee Section -->
-        <div class=collapsible>ADD EMPLOYEE</div>
-        <div id=addEmployee>
-            <h2 style=display:flex;justify-content:center>Add Employee</h2>
-            <div class=addEmployee><img alt="" src=https://controlio.net/i/svg/brand-figure.svg width=400px>
+
+        <!-- Add Employee Section --> 
+
+        <input type="checkbox" id="btnControl"  />
+    <label for="btnControl" class="toggleLabel">Toggle Add Employee Form</label>    
+        <div id=addEmployee class="Employee">
+            <h2 class="addHeading" >Add Employee</h2>
+            <div class=addEmployee><img alt="Employee" src=https://controlio.net/i/svg/brand-figure.svg width=400px>
                 <form action="" target=_blank class=formWidth>
                     <div class=inputAddEmployee><label for=name>Full Name</label> <input name=name
                             placeholder="Full Name"></div>
@@ -43,14 +54,17 @@
                             type=email></div>
                     <div class=inputAddEmployee><label for=Number>Number</label> <input name=""
                             placeholder="Contact Number" type=number></div>
-                    <div style=margin-top:30px><input type=submit class=SubmitButton value=submit></div>
+                    <div style=margin-top:30px>
+                    <input type=submit class=SubmitButton value=submit></div>
                 </form>
             </div>
         </div>
+        </div>
+   
         <!-- Adding Vehicle Section -->
-        <div class=collapsible>ADD Vehicle</div>
+        <input type="checkbox" id="btnControl1"  />
+        <label for="btnControl1" class="toggleLabel">Toggle Add Vehicle Form</label>
         <div style=margin-top:100px id=addVehicle>
-            <h2 style=display:flex;justify-content:center>Add Vehicle</h2>
             <div class=addVehicle><img alt="" src=https://cdn.pixabay.com/photo/2020/11/16/17/41/car-5749722_1280.png
                     width=400px style=max-height:500px>
                 <form action="" target=_blank class=formWidth>
@@ -71,18 +85,20 @@
                             name=VehicleNumber placeholder="Vehicle Number" type=number></div>
                     <div class=inputAddVehicle><label for=EmployeeId>Employee Id</label> <input name=EmployeeId
                             placeholder="Empoyee Id" type=number></div>
-                    <div class=inputAddVehicle><label for=Specification>Specification</label> <textarea
+                    <div class=inputAddVehicle><label for=Specification>Specification</label>
+                         <textarea
                             name=Specification placeholder="Type Here" value=""></textarea></div>
                     <div><input type=submit class=SubmitButton value=submit></div>
                 </form>
             </div>
         </div>
+   
+   
         <!-- Adding Feedback Section -->
-        <div class=collapsible>ADD Feedback</div>
         <div>
             <h2 class=Feedback>Add Feedback</h2>
             <div class=FeedbackBackground>
-                <div style=height:400px;padding-top:5%;margin-top:5px id=addFeedback><img alt=""
+                <div id=addFeedback><img alt=""
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZiFNpO4KNEW1-XSTeHAyifS6q8IRqfrxtg6F72T9-4mEdI0zy"
                         width=400px style=padding:100px;padding-left:20px>
                     <div>
@@ -100,8 +116,9 @@
                 </div>
             </div>
         </div>
+
         <!-- Add Pricing Section -->
-        <h2 style=display:grid;align-self:center;justify-content:center>Pricing</h2>
+        <h2 class="pricing_main" >Pricing</h2>
         <div class=price id=pricing>
             <div class=pricebox>
                 <p>CYCLE
@@ -109,8 +126,7 @@
                     <h3>$100</h3>
                     <p>/month
                 </div>
-                <div class=packPricing
-                    style=padding:0;display:flex;flex-direction:column;align-items:center;color:rgba(0,0,0,.708)>
+                <div class=packPricing>
                     <p>$5 daily
                     <p>$100 monthly
                     <p>$500yearly
@@ -122,8 +138,7 @@
                     <h3>$100</h3>
                     <p>/month
                 </div>
-                <div class=packPricing
-                    style=padding:0;display:flex;flex-direction:column;align-items:center;color:rgba(0,0,0,.708)>
+                <div class=packPricing>
                     <p>$5 daily
                     <p>$100 monthly
                     <p>$500yearly
@@ -135,31 +150,18 @@
                     <h3>$100</h3>
                     <p>/month
                 </div>
-                <div class=packPricing
-                    style=padding:0;display:flex;flex-direction:column;align-items:center;color:rgba(0,0,0,.708)>
+                <div class=packPricing>
                     <p>$5 daily
                     <p>$100 monthly
                     <p>$500yearly
                 </div><button class=purchaseButton>Purchase</button>
             </div>
         </div>
-    </main>
-    <footer></footer>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
 
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    </main>
+    
+    <footer></footer>
+
+   
 
 </html>
