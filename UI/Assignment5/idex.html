@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Link for bootstarp Connectivity -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+        <!---------Link for css fileConnectivity------->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Icons of the bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone 5</title>
+</head>
+
+<body>
+
+    <div>
+
+        <div class="flex-row" style="display: flex; position: relative;">
+
+
+
+            <!-- Side Bar of the page Fixed  -->
+            <nav class="sidebar  flex-column w-15 mr-4  position-relative " style="width: 250px; height: 100px;">
+                <div class="position-fixed bg-white p-3" style="z-index: 10; overflow-y: scroll;  height: 600px;">
+
+
+                    <p class="h-10 m-5 w-25">Kanishk </p>
+                    <p class="text-dark" style="font-size: x-small;">Menu</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item active">
+                            <a class="nav-link  text-primary " style="font-size: small;" href="#">
+                                <i class="bi bi-tv"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-layers"></i> Advanced UI
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-calendar4-event"></i> Calendar
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="text-dark mt-4" style="font-size: x-small;">Components</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-0-circle"></i> UI Elements
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-envelope-paper-fill"></i> Forms
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-speedometer"></i> Charts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-window-stack"></i> Icons
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-table"></i> Tables
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="text-dark mt-4" style="font-size: x-small;">Extra</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-map"></i> Maps
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                                <i class="bi bi-arrows-fullscreen"></i> Pages
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Another Portion or the content of the page -->
+            <div style=" background-color: #eff3f6;" class="ms-4">
+                <div>
+                    <!-------------------------------------navbar Top of the page------------------------------->
+                    <nav style="background-color: #5b6be8; display: flex; height: 60px;     align-items: center; justify-content: space-between;">
+                        <form role="search" class="">
+                            <input type="text" placeholder="Search..." class="form-control"
+                                style="background-color: #6d7beb; border: 0px solid #13239a ; border-radius: 50px; margin-left: 25px; ">
+                            <a href=""><i class="fa fa-search"></i></a>
+                        </form>
+
+                        <div
+                            style="display: flex; color: white; height: fit-content;width: 25%;     justify-content: space-evenly;">
+                            <p>
+                                English
+                            </p>
+                            <div>
+                                <img src="https://mannatthemes.com/annex/vertical/assets/images/flags/us_flag.jpg"
+                                    class="ml-2" height="16" alt="">
+                            </div>
+                            <div>
+                                <i class="bi bi-envelope-paper"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-bell"></i>
+                            </div>
+                            <div>
+                                <img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-1.jpg"
+                                    alt="user" height="40px" class="rounded-circle">
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!--------------------- Main Content of the page ------------------------->
+                    <div style="margin-inline: 2%;">
+                        <p style="margin:5%; margin-left: 0; margin-block-end: 10px; ">
+                            DashBoard
+                        </p>
+                        <!--------------Dashboard card --------------->
+                        <div style="display: flex; justify-content: space-between;">
+                            <div class="col-md-6 col-lg-6 col-xl-3 " style="width: 250px;">
+                                <div class="card m-b-30">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round"><i class="bi bi-file-earmark-person"></i></div>
+                                            </div>
+                                            <div class="col-6 align-self-center text-center">
+                                                <div class="m-l-10">
+                                                    <h5 class="mt-0 round-inner">$18090</h5>
+                                                    <p class="mb-0 text-muted">Visits Today</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 align-self-end align-self-center">
+                                                <h6 class="m-0 float-right text-center text-danger"><i
+                                                        class="mdi mdi-arrow-down"></i> <span>5.26%</span></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6 col-xl-3 " style="width: 250px;">
+                                <div class="card m-b-30 ">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round">
+                                                    <i class="bi bi-file-earmark-person"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 text-center align-self-center">
+                                                <div class="m-l-10">
+                                                    <h5 class="mt-0 round-inner">562</h5>
+                                                    <p class="mb-0 text-muted">New Users</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 align-self-end align-self-center">
+                                                <h6 class="m-0 float-right text-center text-success"><i
+                                                        class="mdi mdi-arrow-up"></i>
+                                                    <span>8.68%</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3" style="width: 250px;">
+                                <div class="card m-b-30">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round">
+                                                    <i class="bi bi-shop"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 align-self-center text-center">
+                                                <div class="m-l-10">
+                                                    <h5 class="mt-0 round-inner">$18090</h5>
+                                                    <p class="mb-0 text-muted">Visits Today</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 align-self-end align-self-center">
+                                                <h6 class="m-0 float-right text-center text-danger"><i
+                                                        class="mdi mdi-arrow-down"></i> <span>5.26%</span></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6 col-xl-3 " style="width: 250px;">
+                                <div class="card m-b-30 ">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row">
+                                            <div class="col-3 align-self-center">
+                                                <div class="round"><i class="mdi mdi-account-multiple-plus"></i></div>
+                                            </div>
+                                            <div class="col-6 text-center align-self-center">
+                                                <div class="m-l-10">
+                                                    <h5 class="mt-0 round-inner">562</h5>
+                                                    <p class="mb-0 text-muted">New Users</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 align-self-end align-self-center">
+                                                <h6 class="m-0 float-right text-center text-success"><i
+                                                        class="mdi mdi-arrow-up"></i>
+                                                    <span>8.68%</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!----------------------  Graphs Content ---------------------------->
+                        <div style="display: flex; height: 450px; overflow: hidden; width: 100%; align-items: center;"
+                            class="mt-0">
+
+                            <div class="row my-4 g-4">
+                                <!------------ Line graph ------------->
+                                <div class="col-md-7" style="width: 65.5%;">
+                                    <div class="card ">
+                                        <span class="p-2">Overview</span>
+                                        <img src="./Screenshot 2025-04-28 135010.png" class="w3" alt="">
+                                    </div>
+                                </div>
+                                <!--------------Pie Chart-------------->
+                                <div class="col-md-4 pe-0">
+                                    <div class="card p-4">
+                                        <span class="fw-bold">Revenue By Country</span>
+
+                                        <img src="./Screenshot 2025-04-28 135033.png" class="" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contents -->
+                            <div>
+
+                                <!-- Carousel items -->
+
+                                <div class="carousel-item">
+                                    <!-- Twitter -->
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-12 carousel-icon text-center">
+                                            <img src="data:image/png;base64,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"
+                                                alt="">
+                                        </div>
+                                        <div class="col-sm-10 mx-auto text-white text-center">
+                                            <p>Lorem Ipsum is simply dummy text of the <span
+                                                    class="warning">#TWITTER</span> and typesetting industry. A
+                                                description list is perfect for defining terms.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Weather  Content -->
+                        <div style="display: flex;">
+
+                            <div style="width: 50%;">
+
+                                <div class="col-md-4" style=" width: 94%">
+                                    <div class="card p-3 text-center" style="background: #4fc3f7; color: white;">
+                                        <i class="bi bi-twitter" style="font-size: 2rem;"></i>
+                                        <p class="mt-2">Lorem Ipsum is simply dummy text of the #TWITTER and typesetting
+                                            industry.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mt-3" style=" width: 94%">
+                                    <div class="card p-3 text-center" style="background: #5e72e4; color: white;">
+                                        <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+                                        <div style="display: flex; justify-content: space-around;">
+                                            <div>
+                                                <h5>54k</h5>
+                                                <small>Followers</small>
+                                            </div>
+                                            <div>
+
+                                                <h5>44k</h5>
+                                                <small>Posts</small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 ms-3">
+                                <div class="card p-3 text-center">
+                                    <h6>5 TB Bandwidth usage</h6>
+                                    <h6>5412 Download count</h6>
+                                    <img src="./Screenshot 2025-04-28 160252.png" alt="">
+                                </div>
+                            </div>
+
+                            <!-- Display Time of the user  -->
+                            <div class="card bg-white mb-30 ms-3"><img
+                                    src="https://mannatthemes.com/annex/vertical/assets/images/widgets/wather.jpg"
+                                    alt="" class="img-fluid">
+                                <div class="card-body bg-primary">
+                                    <div class="row">
+                                        <div class="col-6 align-self-center">
+                                            <div class="row">
+                                                <div class="text-center">
+                                                    <p class="text-white">SUNDAY <span>25<sup>th</sup></span></p>
+                                                </div>
+                                                </div>
+                                                <div>
+                                                <div class=" text-center align-self-center">
+                                                    <h5 class="mt-0 text-white"><b>32°</b></h5>
+                                                    <span class="text-white font-12">Partly cloudy</span>
+                                                    <span class="text-white font-12">15km/h - 37%</span>
+                                                </div>
+                                            </div><!-- End row -->
+                                        </div>
+                                        <div class="col-6 align-self-center">
+                                            <div class="row">
+                                                <div class="col-6 text-center">
+                                                    <h6 class="text-white mt-0 font-14">MON</h6>
+                                                    <h6 class="text-white font-14">38°<i class="wi-degrees"></i></h6>
+                                                </div>
+                                                <div class="col-6 text-center">
+                                                    <h6 class="text-white mt-0 font-14">TUE</h6>
+                                                    <h6 class="text-white font-14">32°<i class="wi-degrees"></i></h6>
+                                                </div>
+                                            </div><!-- end row -->
+                                        </div>
+                                    </div><!-- end row -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Members Table and Weather -->
+                        <div class="row my-4">
+                            <div class="col-md-8">
+                                <div class="card p-3">
+                                    <h6>Members Profiles</h6>
+                                    <!-- Table of the Members  -->
+                                    <table class="table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>Member</th>
+                                                <th>Name</th>
+                                                <th style="width: 10px;">Country</th>
+                                                <th>Earnings</th>
+                                                <th>Sales</th>
+                                                <th>Reviews</th>
+                                                <th>Progress</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-2.jpg"
+                                                        height="30px" class="profile-img1 rounded-circle"></td>
+                                                <td> Ruby T. Curd</td>
+                                                <td><img src="https://flagcdn.com/us.svg" width="20"></td>
+                                                <td>$1000</td>
+                                                <td>10</td>
+                                                <td><i class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i></td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar" style="width: 70%;"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-3.jpg"
+                                                        height="30px" class="profile-img1 rounded-circle"></td>
+                                                <td>William A. Johnson</td>
+                                                <td><img src="https://flagcdn.com/us.svg" width="20%"></td>
+                                                <td>$490</td>
+                                                <td>24</td>
+                                                <td><i class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i></td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar" style="width: 50%;"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-4.jpg"
+                                                        height="30px" class="profile-img1 rounded-circle"></td>
+                                                <td>Bobby M. Gray</td>
+                                                <td><img src="https://flagcdn.com/us.svg" width="20"></td>
+                                                <td>$490</td>
+                                                <td>24</td>
+                                                <td><i class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i><i
+                                                        class="bi bi-star-fill" style="color: #f2f21d;"></i></td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-success" style="width: 50%;"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-5.jpg"
+                                                        height="30px" class="profile-img1 rounded-circle"></td>
+                                                <td> Robert N. Carlile </td>
+                                                <td><img src="https://flagcdn.com/us.svg" width="20"></td>
+                                                <td>$450</td>
+                                                <td>24</td>
+                                                <td><i class="bi bi-star-fill" style="color: #f2f21d;"></i>
+                                                    <i class="bi bi-star-fill" style="color: #f2f21d;"></i>
+                                                    <i class="bi bi-star-fill" style="color: #f2f21d;"></i>
+                                                    <i class="bi bi-star-fill" style="color: #f2f21d;"></i>
+                                                </td>
+                                                <td>
+                                                    <div class="progress" style="height: 6px;">
+                                                        <div class="progress-bar bg-danger" style="width: 50%;"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-------------- User Logging Activity---------->
+                            <div class="col-md-4">
+                                <div class="card p-3">
+                                    <h5 class="mt-2 mb-4">New Users</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-2.jpg"
+                                                        alt="" class="profile-img rounded-circle" height="40px">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="mb-0">Ruby T. Curd</p>
+                                                    <small class="text-muted">New York</small>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <small class="text-success">Now</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-3.jpg"
+                                                        alt="" class="profile-img rounded-circle" height="40px">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="mb-0">
+                                                        William A. Johnson</p>
+                                                    <small class="text-muted">California</small>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <small class="text-success">Now</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-5.jpg"
+                                                        alt="" class="profile-img rounded-circle" height="40px">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="mb-0">
+                                                        Robert N. Carlile</p>
+                                                    <small class="text-muted">India</small>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <small class="text-danger">10 min ago</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="https://mannatthemes.com/annex/vertical/assets/images/users/avatar-4.jpg"
+                                                        alt="" class="profile-img rounded-circle" height="40px">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="mb-0">Bobby M. Gray</p>
+                                                    <small class="text-muted">Australia</small>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <small class="text-danger">Now </small>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer of the page -->
+        <footer class="footer "
+            style="height: 50px; background-color:darkgrey; display: flex; padding-left: 50%; padding-top: 10px;">© 2019
+            Annex by Mannatthemes.</footer>
+    </div>
+
+</body>
+
+</html>
