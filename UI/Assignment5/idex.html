@@ -29,15 +29,23 @@
                     <p class="text-dark" style="font-size: x-small;">Menu</p>
                     <ul class="nav flex-column">
                         <li class="nav-item active">
-                            <a class="nav-link  text-primary " style="font-size: small;" href="#">
-                                <i class="bi bi-tv"></i>
-                                Dashboard
+                            <a class="nav-link text-primary" style="font-size: small;" href="#">
+                                <i class="bi bi-tv"></i> Dashboard
+                                <span class="badge bg-primary rounded-pill d-inline-flex justify-content-center align-items-center" style="width: 24px; height: 24px; font-size: 12px; margin-left: 30px;">7</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#advancedContent" role="button" aria-expanded="false" aria-controls="advancedContent">
                                 <i class="bi bi-layers"></i> Advanced UI
                             </a>
+                            <div class="collapse" id="advancedContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li><a class="dropdown-item" href="#">Highlight</a></li>
+                                    <li><a class="dropdown-item" href="#">Rating</a></li>
+                                    <li><a class="dropdown-item" href="#">Alertify</a></li>
+                                    <li><a class="dropdown-item" href="#">Range Slider</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" style="font-size: small;" href="#">
@@ -48,42 +56,125 @@
                     <p class="text-dark mt-4" style="font-size: x-small;">Components</p>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#uiElementsContent" role="button" aria-expanded="false" aria-controls="uiElementsContent">
                                 <i class="bi bi-0-circle"></i> UI Elements
                             </a>
+                            <div class="collapse" id="uiElementsContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Buttons</li>
+                                    <li>Cards</li>
+                                    <li>Tabs & Accordions</li>
+                                    <li>Modals</li>
+                                    <li>Images</li>
+                                    <li>Alerts</li>
+                                    <li>Progress Bars</li>
+                                    <li>Dropdowns</li>
+                                    <li>Lightbox</li>
+                                    <li>Navs</li>
+                                    <li>Pagination</li>
+                                    <li>Popover & Tooltips</li>
+                                    <li>Badge</li>
+                                    <li>Carousel</li>
+                                    <li>Video</li>
+                                    <li>Typography</li>
+                                    <li>Sweet-alert</li>
+                                    <li>Grid</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#formsContent" role="button" aria-expanded="false" aria-controls="formsContent">
                                 <i class="bi bi-envelope-paper-fill"></i> Forms
+                                <span class="badge bg-primary rounded-pill d-inline-flex justify-content-center align-items-center" style="width: 24px; height: 24px; font-size: 12px; margin-left: 50px;">8</span>
                             </a>
+                            <div class="collapse" id="formsContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Form Elements</li>
+                                    <li>Form Validation</li>
+                                    <li>Form Advanced</li>
+                                    <li>Form Editors</li>
+                                    <li>Form File Upload</li>
+                                    <li>Form Mask</li>
+                                    <li>Summernote</li>
+                                    <li>Form Xeditable</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#chartsContent" role="button" aria-expanded="false" aria-controls="chartsContent">
                                 <i class="bi bi-speedometer"></i> Charts
                             </a>
+                            <div class="collapse" id="chartsContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Morris Chart</li>
+                                    <li>Chartist Chart</li>
+                                    <li>Chartjs Chart</li>
+                                    <li>Flot Chart</li>
+                                    <li>C3 Chart</li>
+                                    <li>Jquery Knob Chart</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#iconsContent" role="button" aria-expanded="false" aria-controls="iconsContent">
                                 <i class="bi bi-window-stack"></i> Icons
                             </a>
+                            <div class="collapse" id="iconsContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Material Design</li>
+                                    <li>Ion Icons</li>
+                                    <li>Font Awesome</li>
+                                    <li>Themify Icons</li>
+                                    <li>Dripicons</li>
+                                    <li>Typicons Icons</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#tablesContent" role="button" aria-expanded="false" aria-controls="tablesContent">
                                 <i class="bi bi-table"></i> Tables
                             </a>
+                            <div class="collapse" id="tablesContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Basic Tables</li>
+                                    <li>Data Table</li>
+                                    <li>Responsive Table</li>
+                                    <li>Editable Table</li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                     <p class="text-dark mt-4" style="font-size: x-small;">Extra</p>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
-                                <i class="bi bi-map"></i> Maps
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#mapsContent" role="button" aria-expanded="false" aria-controls="mapsContent">
+                                <i class="bi bi-map"></i> 
+                                <span>Maps</span>
+                                <span class="badge bg-danger rounded-pill d-inline-flex justify-content-center align-items-center" style="width: 24px; height: 24px; font-size: 12px; margin-left: 50px;">2</span>
                             </a>
+                            <div class="collapse" id="mapsContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Google Map</li>
+                                    <li>Vector Map</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" style="font-size: small;" href="#">
-                                <i class="bi bi-arrows-fullscreen"></i> Pages
+                            <a class="nav-link text-dark" style="font-size: small;" data-bs-toggle="collapse" href="#pagesContent" role="button" aria-expanded="false" aria-controls="pagesContent">
+                                <i class="bi bi-arrows-fullscreen"></i>
+                                 Pages
                             </a>
+                            <div class="collapse" id="pagesContent">
+                                <ul class="list-unstyled ms-3">
+                                    <li>Login</li>
+                                    <li>Register</li>
+                                    <li>Recover Password</li>
+                                    <li>Lock Screen</li>
+                                    <li>Blank Page</li>
+                                    <li>Error 404</li>
+                                    <li>Error 500</li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -134,8 +225,9 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="col-3 align-self-center">
-                                                <div class="round"><i class="bi bi-file-earmark-person"></i></div>
-                                            </div>
+                                                <div class="round d-flex justify-content-center align-items-center" style="background-color: #13239a; color: white; width: 50px; height: 50px; border-radius: 50px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+                                                    <i class="bi bi-file-earmark-person"></i>
+                                                </div>  </div>
                                             <div class="col-6 align-self-center text-center">
                                                 <div class="m-l-10">
                                                     <h5 class="mt-0 round-inner">$18090</h5>
@@ -156,7 +248,7 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="col-3 align-self-center">
-                                                <div class="round">
+                                                <div class="round d-flex justify-content-center align-items-center" style="background-color: #13239a; color: white; width: 50px; height: 50px; border-radius: 50px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
                                                     <i class="bi bi-file-earmark-person"></i>
                                                 </div>
                                             </div>
@@ -181,7 +273,8 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="col-3 align-self-center">
-                                                <div class="round">
+                                                <div class="round d-flex justify-content-center align-items-center" style="background-color: #13239a; color: white; width: 50px; height: 50px; border-radius: 50px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+                                                    
                                                     <i class="bi bi-shop"></i>
                                                 </div>
                                             </div>
@@ -205,7 +298,9 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="col-3 align-self-center">
-                                                <div class="round"><i class="mdi mdi-account-multiple-plus"></i></div>
+                                                <div class="round d-flex justify-content-center align-items-center" style="background-color: #13239a; color: white; width: 50px; height: 50px; border-radius: 50px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+                                                    <i class="bi bi-file-earmark-person"></i>
+                                                </div>
                                             </div>
                                             <div class="col-6 text-center align-self-center">
                                                 <div class="m-l-10">
