@@ -4,3 +4,27 @@
 .nav-item{
     line-height: 30px;
 }
+
+/* Hide subbuttons initially */
+ul.list-unstyled {
+    display: none;
+}
+
+/* Style for main buttons */
+li.has_sub > a {
+    cursor: pointer;
+}
+
+/* Active state for main buttons (when clicked) */
+li.has_sub.active ul.list-unstyled {
+    display: block; /* Show the subbuttons */
+}
+.card{
+    border: 0px;
+    font-size:12px ;
+    line-height: 8px;
+}
+.badge{
+    margin-top: 8px;
+    margin-left: 5px;
+}
