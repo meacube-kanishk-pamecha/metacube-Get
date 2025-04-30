@@ -1,312 +1,340 @@
-// correct name ornot
-function isValidName(name) {
-    return /^[A-Za-z ]{2,}$/.test(name);
+// name check
+function nameOk(n) {
+    return /^[A-Za-z ]{2,}$/.test(n);
 }
 
-// validating emails
-function isValidEmail(email) {
-    return /^[^@]+@[^.]+\..+$/.test(email);
+
+// email check
+function emlCheck(e) {
+    return /^[^@]+@[^.]+\..+$/.test(e);
 }
 
-// strength
-function checkPasswordStrength(password) {
-    const hasUpper = /[A-Z]/.test(password);
-    const hasLower = /[a-z]/.test(password);
-    const hasNumber = /[0-9]/.test(password);
-    const hasSpecial = /[^A-Za-z0-9]/.test(password);
-    const isLong = password.length >= 8;
 
-    if (hasUpper && hasLower && hasNumber && hasSpecial && isLong) {
+// pass strong?
+function howGoodPass(p) {
+    let up = /[A-Z]/.test(p);
+    let low = /[a-z]/.test(p);
+    let num = /[0-9]/.test(p);
+    let spl = /[^A-Za-z0-9]/.test(p);
+    let len = p.length >= 8;
+
+
+    if (up && low && num && spl && len) {
         return "strong";
-    } else if (hasUpper && hasLower && hasNumber && isLong) {
+    } else if (up && low && num && len) {
         return "normal";
     } else {
         return "weak";
     }
 }
 
-// number 
-function isValidNumber(num) {
-    return /^\d{9,}$/.test(num);
+
+// num valid
+function numOkay(n) {
+    return /^\d{9,}$/.test(n);
 }
 
-// ------------ employee -------------//
-function startEmployeeForm() {
-    const form = document.querySelector("#addEmployee form");
-    form.innerHTML = ""; // Clear existing form
-    let name ="";
-    const fields = [
+
+
+
+// ========== emp form ============
+function empFormStart() {
+    let frm = document.querySelector("#addEmployee form");
+    frm.innerHTML = "";
+
+
+    let gotName = "";
+    let steps = [
         {
-            label: "Enter your full name",
+            label: "What is your name?",
             name: "name", type: "text",
-            validate: isValidName
+            validate: nameOk
         },
         {
-            label: `Hi ${name}! Can I know your gender?`,
+            label: `Hi ${gotName}! What's ur gender?`,
             name: "gender", type: "radio",
             options: ["Male", "Female", "Other"]
         },
         {
-            label: "Enter your email",
+            label: "Email pls",
             name: "email", type: "email",
-            validate: isValidEmail
+            validate: emlCheck
         },
         {
-            label: "Create a password",
+            label: "Make a password",
             name: "password", type: "password",
-            validate: checkPasswordStrength
+            validate: howGoodPass
         },
         {
-            label: "Confirm your password",
+            label: "Retype password",
             name: "confirmPassword", type: "password"
         },
         {
-            label: "Enter your contact number",
-            name: "number", type: "number", validate: isValidNumber
+            label: "Phone number?",
+            name: "number", type: "number", validate: numOkay
         }
     ];
 
-    let step = 0;
-    const data = {};
 
-    showNextField();
+    let current = 0;
+    let collected = {};
 
-    function showNextField() {
-        const field = fields[step];
-        form.innerHTML = "";
 
-        const label = document.createElement("label");
-        name = data.name;
-        label.innerText = field.label;
-        form.appendChild(label);
-        let input;
-        if (field.type === "radio") {
-            field.options.forEach(opt => {
-                const radio = document.createElement("input");
-                radio.type = "radio";
-                radio.style.display = 'inline-flex';
-                radio.name = field.name;
-                radio.value = opt;
+    nxt();
 
-                const span = document.createElement("span");
-                span.innerText = " " + opt;
 
-                form.appendChild(radio);
-                form.appendChild(span);
+    function nxt() {
+        let f = steps[current];
+        frm.innerHTML = "";
 
+
+        let lbl = document.createElement("label");
+        gotName = collected.name;
+        lbl.innerText = f.label;
+        frm.appendChild(lbl);
+
+
+        let inp;
+
+
+        if (f.type === "radio") {
+            f.options.forEach(g => {
+                let r = document.createElement("input");
+                r.type = "radio";
+                r.name = f.name;
+                r.value = g;
+
+
+                let t = document.createElement("span");
+                t.innerText = " " + g;
+
+
+                frm.appendChild(r);
+                frm.appendChild(t);
             });
 
-        } else {
-            input = document.createElement("input");
-            input.type = field.type;
-            input.name = field.name;
-            form.appendChild(input);
 
-            if (field.name === "password") {
-                input.addEventListener("input", function () {
-                    const strength = checkPasswordStrength(input.value);
-                   if (strength === "strong") {
-                        input.style.border = "4px solid green";
-                    } else if (strength === "normal") {
-                        input.style.border = "4px solid orange";
-                    } else {
-                        input.style.border = "4px solid red";
-                    }
-                    
-                    
-        
+        } else {
+            inp = document.createElement("input");
+            inp.type = f.type;
+            inp.name = f.name;
+            frm.appendChild(inp);
+
+
+            if (f.name === "password") {
+                inp.addEventListener("input", function () {
+                    let str = howGoodPass(inp.value);
+                    if (str === "strong") inp.style.border = "4px solid green";
+                    else if (str === "normal") inp.style.border = "4px solid orange";
+                    else inp.style.border = "4px solid red";
                 });
             }
         }
 
 
-        // Listen for Enter or selection
-        form.addEventListener("submit", function (e) {
+        frm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            let value;
 
-            if (field.type === "radio") {
-                const selected = form.querySelector(`input[name="${field.name}"]:checked`);
-                value = selected ? selected.value : null;
-                if (!value) {
-                    return;
-                }
+            let val;
+
+
+            if (f.type === "radio") {
+                let ch = frm.querySelector(`input[name="${f.name}"]:checked`);
+                val = ch ? ch.value : null;
+                if (!val) return;
             } else {
-                value = form.querySelector(`input[name="${field.name}"]`).value;
-                if (field.name === "confirmPassword" && value !== data.password) {
-                    alert("Passwords do not match!");
+                val = frm.querySelector(`input[name="${f.name}"]`).value;
+                if (f.name === "confirmPassword" && val !== collected.password) {
+                    alert("No match password!");
                     return;
                 }
-                if (field.validate && !field.validate(value)) {
-                    alert("Please enter valid input.");
+                if (f.validate && !f.validate(val)) {
+                    alert("Invalid input, try again.");
                     return;
                 }
             }
 
-            data[field.name] = value;
-            step++;
 
-            if (step < fields.length) {
-                showNextField();
+            collected[f.name] = val;
+            current++;
+
+
+            if (current < steps.length) {
+                nxt();
             } else {
-                console.log("Id " + Math.floor(Math.random() * 1000));
+                console.log("Id is " + Math.floor(Math.random() * 1000));
                 document.querySelector("#addEmployee").style.display = "none";
-                startVehicleForm(data);
+                carFormNow(collected);
             }
         });
 
-        // Add submit button
-        const btn = document.createElement("button");
-        btn.type = "submit";
-        btn.innerText = "Next";
-        btn.className = "btnNext";
-        form.appendChild(btn);
+
+        let b = document.createElement("button");
+        b.type = "submit";
+        b.innerText = "Next";
+        b.className = "btnNext";
+        frm.appendChild(b);
     }
 }
 
-// <<---------------------------- Vehicle------------------------->>
-function startVehicleForm(employeeData) {
-    const form = document.querySelector("#addVehicle form");
-    form.innerHTML = "";
 
-    const fields = [
-        {
-            label: "Enter your vehicle name",
-            name: "vname", type: "text"
-        },
-        {
-            label: "Which type of vehicle?",
-            name: "vtype", type: "select",
-            options: ["Cycle", "MotorCycle", "Four Wheeler"]
-        },
-        {
-            label: "Enter vehicle number",
-            name: "vnum", type: "text"
-        },
-        {
-            label: "Enter employee ID",
-            name: "empid", type: "number"
-        },
-        {
-            label: "Vehicle identification",
-            name: "ident", type: "textarea"
-        }
+
+
+// <------------ car Parking ---------->
+function carFormNow(empD) {
+    let frm = document.querySelector("#addVehicle form");
+    frm.innerHTML = "";
+
+
+    let stepz = [
+        { label: "Vehicle name?", name: "vname", type: "text" },
+        { label: "Type of vehicle?", name: "vtype", type: "select", options: ["Cycle", "MotorCycle", "Four Wheeler"] },
+        { label: "Plate number?", name: "vnum", type: "text" },
+        { label: "Emp ID?", name: "empid", type: "number" },
+        { label: "Some ID of vehicle?", name: "ident", type: "textarea" }
     ];
 
-    let step = 0;
-    const data = {};
 
-    showNextField();
+    let s = 0;
+    let dataz = {};
 
-// <---------------------next field in it ------------------------>
-    function showNextField() {
-        const field = fields[step];
-        form.innerHTML = "";
 
-        const label = document.createElement("label");
-        label.innerText = field.label;
-        form.appendChild(label);
+    nextField();
 
-        let input;
-        if (field.type === "select") {
-            input = document.createElement("select");
-            field.options.forEach(opt => {
-                const optEl = document.createElement("option");
-                optEl.value = opt;
-                optEl.innerText = opt;
-                input.appendChild(optEl);
+
+    function nextField() {
+        let f = stepz[s];
+        frm.innerHTML = "";
+
+
+        let l = document.createElement("label");
+        l.innerText = f.label;
+        frm.appendChild(l);
+
+
+        let i;
+        if (f.type === "select") {
+            i = document.createElement("select");
+            f.options.forEach(x => {
+                let o = document.createElement("option");
+                o.value = x;
+                o.innerText = x;
+                i.appendChild(o);
             });
-        } else if (field.type === "textarea") {
-            input = document.createElement("textarea");
+        } else if (f.type === "textarea") {
+            i = document.createElement("textarea");
         } else {
-            input = document.createElement("input");
-            input.type = field.type;
+            i = document.createElement("input");
+            i.type = f.type;
         }
 
-        input.name = field.name;
-        form.appendChild(input);
 
-        form.addEventListener("submit", function (e) {
+        i.name = f.name;
+        frm.appendChild(i);
+
+
+        frm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const value = form.querySelector(`[name="${field.name}"]`).value;
-            if (!value) {
-                alert("This field is required.");
+            let v = frm.querySelector(`[name="${f.name}"]`).value;
+            if (!v) {
+                alert("Don't leave it blank");
                 return;
             }
-            data[field.name] = value;
-            step++;
-            if (step < fields.length) {
-                showNextField();
+            dataz[f.name] = v;
+            s++;
+            if (s < stepz.length) {
+                nextField();
             } else {
                 document.querySelector("#addVehicle").style.display = "none";
-                showPricing(data.vtype);
+                showPriceList(dataz.vtype);
             }
         });
 
-        const btn = document.createElement("button");
-        btn.type = "submit";
-        btn.innerText = "Next";
-        btn.className = "btnNext";
-        form.appendChild(btn);
+
+        let b = document.createElement("button");
+        b.type = "submit";
+        b.innerText = "Next";
+        b.className = "btnNext";
+        frm.appendChild(b);
     }
 }
 
-// <<----------------------Price Function---------------------->>
-function showPricing(vehicleType) {
-    const prices = {
+
+
+
+// <<---------------------------Pricing--------------------------->>
+function showPriceList(vType) {
+    let cost = {
         "Cycle": [5, 100, 500],
         "MotorCycle": [10, 200, 1000],
         "Four Wheeler": [20, 500, 3500]
     };
 
-    const priceBox = document.getElementById("pricing");
-    priceBox.innerHTML = "<h3>Select your pricing plan:</h3>";
 
-    const planSelect = document.createElement("select");
-    const plans = ["Daily", "Monthly", "Yearly"];
-    plans.forEach((p, i) => {
-        const opt = document.createElement("option");
+    let box = document.getElementById("pricing");
+    box.innerHTML = "<h3>Pick price:</h3>";
+
+
+    let selPlan = document.createElement("select");
+    selPlan.className="Currency"
+    let allPlans = ["Daily", "Monthly", "Yearly"];
+
+
+    allPlans.forEach((p, i) => {
+        let opt = document.createElement("option");
         opt.value = i;
-        opt.innerText = `${p} - ₹${prices[vehicleType][i]}`;
-        planSelect.appendChild(opt);
+        opt.innerText = p + " - ₹" + cost[vType][i];
+        selPlan.appendChild(opt);
     });
 
-    const currencySelect = document.createElement("select");
+
+    let selCurr = document.createElement("select");
+    selCurr.className="Currency";
     ["INR", "USD", "YEN"].forEach(curr => {
-        const opt = document.createElement("option");
-        opt.value = curr;
-        opt.innerText = curr;
-        currencySelect.appendChild(opt);
+        let o = document.createElement("option");
+        o.value = curr;
+        o.innerText = curr;
+        
+        selCurr.appendChild(o);
     });
 
-    const btn = document.createElement("button");
+
+    let btn = document.createElement("button");
     btn.innerText = "Get Pass";
     btn.className = "btnNext";
 
-    const result = document.createElement("div");
+
+    let res = document.createElement("div");
+
 
     btn.onclick = function () {
-        const index = planSelect.value;
-        const inr = prices[vehicleType][index];
-        const currency = currencySelect.value;
+        let idx = selPlan.value;
+        let price = cost[vType][idx];
+        let c = selCurr.value;
 
-        let converted = inr;
-        if (currency === "USD") converted = (inr / 83).toFixed(2);
-        if (currency === "YEN") converted = (inr * 1.57).toFixed(2);
 
-        const usdValue = (inr / 83).toFixed(2);
+        let out = price;
+        if (c === "USD") out = (price / 83).toFixed(2);
+        else if (c === "YEN") out = (price * 1.57).toFixed(2);
 
-        result.innerText = `You selected ${currency} ${converted}. Price $${usdValue}.`;
+
+        let usd = (price / 83).toFixed(2);
+
+
+        res.innerText = "You selected " + c + " " + out + ". Price $" + usd;
     };
 
-    priceBox.appendChild(planSelect);
-    priceBox.appendChild(currencySelect);
-    
-    priceBox.appendChild(btn);
-    priceBox.appendChild(result);
+
+    box.appendChild(selPlan);
+    box.appendChild(selCurr);
+    box.appendChild(btn);
+    box.appendChild(res);
 }
 
 
-startEmployeeForm();
-showPricing('Cycle');
+
+
+empFormStart();
+showPriceList('Cycle');
+ 
