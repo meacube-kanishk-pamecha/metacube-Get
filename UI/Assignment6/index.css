@@ -1,0 +1,299 @@
+.formWidth,
+nav {
+    padding: 20px;
+    display: flex
+}
+
+input,
+option,
+select,
+textarea {
+    width: 250px;
+    background-color: rgba(159, 161, 164, .317)
+}
+
+#Name {
+    background-color: #7fffd4
+}
+
+* {
+    overflow-x: hidden
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+label {
+    display: flex;
+    width: 30%;
+    align-content: center;
+    flex-wrap: wrap
+}
+
+.inputAddEmployee,
+.inputAddFeedback,
+.inputAddVehicle {
+    display: flex;
+    margin: 10px
+}
+
+.formWidth {
+    min-width: 40vw;
+    flex-direction: column;
+    border-radius: 20px;
+    flex-wrap: nowrap;
+    border: 2px solid #000;
+    align-items: center;
+    justify-content: center
+}
+
+.addEmployee,
+.addVehicle {
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly
+}
+
+nav {
+    background-color: #d8d8d8;
+    justify-content: space-between
+}
+
+.addContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%
+}
+
+.Feedback,
+.pricebox {
+    justify-content: center
+}
+
+.Feedback {
+    display: grid;
+    align-self: center
+}
+
+.FeedbackBackground {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #06425c 0, #349bcf 100%, #205dc7 100%)
+}
+
+input,
+option,
+select {
+    border-radius: 15px;
+    border: 0 solid #000;
+    padding: 4px 4px 4px 8px;
+    height: 28px
+}
+
+textarea {
+    padding: 4px;
+    border-radius: 8px;
+    border: 0 solid #000;
+    height: 100px
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.SubmitButton {
+    cursor: pointer;
+    background-color: rgb(90 174 90);
+    height: 40px
+}
+
+.SubmitButton:hover {
+    background-color: #3b64b7;
+    height: 40px
+}
+
+#addFeedback {
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    background-color: #fefefe;
+    justify-content: space-evenly;
+    height: 400px;
+    padding-top: 5%;
+    margin-top: 5px
+}
+
+.FeedbackSubit {
+    width: 130px;
+    margin-left: 60px
+}
+
+.addHeading{
+    display:flex;
+    justify-content:center
+}
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: 0;
+    font-size: 15px
+}
+
+.active,
+.collapsible:hover {
+    background-color: #ccc
+}
+
+.active .content {
+    display: block
+}
+
+.price {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+
+.pricebox {
+    margin: 20px;
+    display: grid;
+    height: 300px;
+    width: 340px;
+    border: 2px solid #000
+}
+
+.circlePrice {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    border: 1px solid #00f
+}
+
+.packPricing p {
+    margin: 0
+}
+
+.packPricing {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 0, 0, .708)
+}
+
+.pricing_main {
+    display: grid;
+    align-self: center;
+    justify-content: center
+}
+
+.purchaseButton {
+    background-color: #fff;
+    color: #5555b2;
+    border: 1px solid #5555b2;
+    border-radius: 4px
+}
+
+.purchaseButton:hover {
+    background-color: #5555b2;
+    color: #fff;
+    border: 1px solid #5555b2
+}
+
+       
+#btnControl{
+    display:none;
+}#btnControl1{
+    display:none;
+}
+
+
+.toggleLabel {
+    cursor: pointer;
+    background-color: #06425c;
+    width: 100%;
+    height: 50px;
+  }
+#btnControl:checked ~ #addEmployee  {
+    display: none;
+  }
+
+#btnControl1:checked ~ #addVehicle  {
+    display: none;
+  }
+input:hover{
+    border: none;
+}
+
+.pricing_main {
+    text-align: center;
+    font-size: 28px;
+    margin: 40px 0 20px;
+    color: #06425c;
+  }
+  
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .pricebox {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .circlePrice {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #349bcf;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .packPricing {
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  .purchaseButton {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #349bcf;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .btnNext{
+    margin-top: 50px;
+    background-color: rgb(97, 97, 207);
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+  }
