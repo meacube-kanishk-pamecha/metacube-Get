@@ -30,7 +30,7 @@ function isValidNumber(num) {
     return /^\d{9,}$/.test(num);
 }
 
-// ------------ EMPLOYEE FORM LOGIC -------------//
+// ------------ employee -------------//
 function startEmployeeForm() {
     const form = document.querySelector("#addEmployee form");
     form.innerHTML = ""; // Clear existing form
@@ -165,9 +165,7 @@ function startEmployeeForm() {
     }
 }
 
-
-
-// <<---------------------------- VEHICLE FORM LOGIC------------------------->>
+// <<---------------------------- Vehicle------------------------->>
 function startVehicleForm(employeeData) {
     const form = document.querySelector("#addVehicle form");
     form.innerHTML = "";
@@ -254,7 +252,7 @@ function startVehicleForm(employeeData) {
     }
 }
 
-// <<----------------------SHOW PRICING---------------------->>
+// <<----------------------Price Function---------------------->>
 function showPricing(vehicleType) {
     const prices = {
         "Cycle": [5, 100, 500],
@@ -309,6 +307,6 @@ function showPricing(vehicleType) {
     priceBox.appendChild(result);
 }
 
-// <-------------------START EVERYTHING ON PAGE LOAD-------------------------->
+
 startEmployeeForm();
 showPricing('Cycle');
