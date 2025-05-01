@@ -1,11 +1,11 @@
 // name check
-function nameOk(n) {
+function name(n) {
     return /^[A-Za-z ]{2,}$/.test(n);
 }
 
 
 // email check
-function emlCheck(e) {
+function email(e) {
     return /^[^@]+@[^.]+\..+$/.test(e);
 }
 
@@ -48,7 +48,7 @@ function empFormStart() {
         {
             label: "What is your name?",
             name: "name", type: "text",
-            validate: nameOk
+            validate: name
         },
         {
             label: `Hi ${gotName}! What's ur gender?`,
@@ -58,7 +58,7 @@ function empFormStart() {
         {
             label: "Email pls",
             name: "email", type: "email",
-            validate: emlCheck
+            validate: email
         },
         {
             label: "Make a password",
