@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.metacube.com/favicon.ico">
+    <link rel=stylesheet href="index.css">
+    <title>MetaCube</title>
+</head>
+
+<body style=margin:0>
+    <!-- Navbar -->
+    <nav>
+        <div>
+            <img alt=Metacube
+                src=https://europe.metacube.com/wp-content/uploads/2022/04/cropped-LogoMetacube_2786-1.png
+                class=custom-logo height=40></div>
+        <div class=addContent>
+            <a href=#addEmployee>ADD Employee</a>
+             <a href=#addVehicle>Add Vehicle</a> 
+             <a href=#addFeedback>Give Feedback</a>
+             <a href=#pricing>Pricing</a>
+        </div>
+    </nav>
+    <main>
+
+        <!-- Image Section or Hero Section -->
+        <div id=Hero>
+            <img alt="Metacube main" src=https://europe.metacube.com/wp-content/themes/metacube/assets/img/slide1-image.png>
+        </div>
+
+        <!-- Add Employee Section --> 
+
+        <input type="checkbox" id="btnControl"  />
+    <label for="btnControl" class="toggleLabel">Toggle Add Employee Form</label>    
+        <div id=addEmployee class="Employee">
+            <h2 class="addHeading" >Add Employee</h2>
+            <div class=addEmployee><img alt="Employee" src=https://controlio.net/i/svg/brand-figure.svg width=400px>
+                <form action="" target=_blank class=formWidth>
+                    <div class=inputAddEmployee><label for=name>Full Name</label> <input name=name
+                            placeholder="Full Name"></div>
+                    <div class=inputAddEmployee><label for=password>Password</label> <input name=password
+                            placeholder=Password type=password></div>
+                    <div class=inputAddEmployee><label for=Confirmpassword>Password</label> <input name=Confirmpassword
+                            placeholder="Confirm Password" type=password></div>
+                    <div class=inputAddEmployee><label for=Gender>Gender</label> <select name=Gender name=Gender
+                            id=Gender>
+                            <option value=male>Male
+                            <option value=Female>Female
+                            <option value=Others>Others
+                        </select></div>
+                    <div class=inputAddEmployee><label for=email>Email</label> <input name=email placeholder="Email Id"
+                            type=email></div>
+                    <div class=inputAddEmployee><label for=Number>Number</label> <input name=""
+                            placeholder="Contact Number" type=number></div>
+                    <div style=margin-top:30px>
+                    <input type=submit class=SubmitButton value=submit></div>
+                </form>
+            </div>
+        </div>
+        </div>
+   
+        <!-- Adding Vehicle Section -->
+        <input type="checkbox" id="btnControl1"  />
+        <label for="btnControl1" class="toggleLabel">Toggle Add Vehicle Form</label>
+        <div style=margin-top:100px id=addVehicle>
+            <div class=addVehicle><img alt="" src=https://cdn.pixabay.com/photo/2020/11/16/17/41/car-5749722_1280.png
+                    width=400px style=max-height:500px>
+                <form action="" target=_blank class=formWidth>
+                    <div class=inputAddVehicle><label for=VehicleCompan>Company Name</label> <input name=name
+                            placeholder="Company Name"></div>
+                    <div class=inputAddVehicle><label for=VehicleModel>Vehicle Model</label> <input name=VehicleModel
+                            placeholder=Model></div>
+                    <div class=inputAddVehicle><label for=Confirmpassword>Password</label> <input name=Confirmpassword
+                            placeholder="Confirm Password" type=password></div>
+                    <div class=inputAddVehicle><label for=Vehicle>Vehicle Type</label> <select name=Vehicle id=Vehicle>
+                            <option value=Bike>Bike
+                            <option value=Car>Car
+                            <option value=Tractor>Tractor
+                        </select></div>
+                    <div class=inputAddVehicle><label for=email>Email</label> <input name=email placeholder="Email Id"
+                            type=email></div>
+                    <div class=inputAddVehicle><label for="Vehicle Number">Vehicle Number</label> <input
+                            name=VehicleNumber placeholder="Vehicle Number" type=number></div>
+                    <div class=inputAddVehicle><label for=EmployeeId>Employee Id</label> <input name=EmployeeId
+                            placeholder="Empoyee Id" type=number></div>
+                    <div class=inputAddVehicle><label for=Specification>Specification</label>
+                         <textarea
+                            name=Specification placeholder="Type Here" value=""></textarea></div>
+                    <div><input type=submit class=SubmitButton value=submit></div>
+                </form>
+            </div>
+        </div>
+   
+   
+        <!-- Adding Feedback Section -->
+        <div>
+            <h2 class=Feedback>Add Feedback</h2>
+            <div class=FeedbackBackground>
+                <div id=addFeedback><img alt=""
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZiFNpO4KNEW1-XSTeHAyifS6q8IRqfrxtg6F72T9-4mEdI0zy"
+                        width=400px style=padding:100px;padding-left:20px>
+                    <div>
+                        <h2 style=display:flex;justify-content:center><b>Get in touch</b></h2>
+                        <form action="" target=_blank
+                            style=display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center>
+                            <div class=inputAddFeedback><input name=name placeholder="John Doe"></div>
+                            <div class=inputAddFeedback><input name=email placeholder="Email Id" type=email></div>
+                            <div class=inputAddFeedback><input name=Subject placeholder=Subject></div>
+                            <div class=inputAddFeedback><textarea name=Specification placeholder="Type Here"
+                                    value=""></textarea></div><input type=submit class="SubmitButton FeedbackSubit"
+                                value=submit>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Pricing Section -->
+        <h2 class="pricing_main" id="pricing">Pricing</h2>
+        <div class="price">
+          <div class="pricebox">
+            <p><strong>Cycle</strong></p>
+            <div class="circlePrice"><span>$100</span></div>
+            <div class="packPricing">
+              <p>$5 daily</p>
+              <p>$100 monthly</p>
+              <p>$500 yearly</p>
+            </div>
+            <button class="purchaseButton">Purchase</button>
+          </div>
+          <div class="pricebox">
+            <p><strong>Bike</strong></p>
+            <div class="circlePrice"><span>$100</span></div>
+            <div class="packPricing">
+              <p>$5 daily</p>
+              <p>$100 monthly</p>
+              <p>$500 yearly</p>
+            </div>
+            <button class="purchaseButton">Purchase</button>
+          </div>
+          <div class="pricebox">
+            <p><strong>Car</strong></p>
+            <div class="circlePrice"><span>$100</span></div>
+            <div class="packPricing">
+              <p>$5 daily</p>
+              <p>$100 monthly</p>
+              <p>$500 yearly</p>
+            </div>
+            <button class="purchaseButton">Purchase</button>
+          </div>
+        </div>
+
+    </main>
+    
+    <footer></footer>
+
+   <script src="./index.js"></script>
+
+</html>
