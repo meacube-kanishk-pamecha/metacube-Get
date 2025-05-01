@@ -133,7 +133,6 @@ function empFormStart() {
 
 
         frm.addEventListener("submit", function (e) {
-            e.preventDefault();
 
 
             let val;
@@ -235,7 +234,6 @@ function carFormNow(empD) {
 
 
         frm.addEventListener("submit", function (e) {
-            e.preventDefault();
             let v = frm.querySelector(`[name="${f.name}"]`).value;
             if (!v) {
                 alert("Don't leave it blank");
