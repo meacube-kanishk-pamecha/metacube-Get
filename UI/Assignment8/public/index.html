@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.metacube.com/favicon.ico">
+    <title>MetaCube</title>
+<style>
+    .formWidth,
+nav {
+    padding: 20px;
+    display: flex
+}
+
+input,
+option,
+select,
+textarea {
+    width: 250px;
+    background-color: rgba(159, 161, 164, .317)
+}
+
+#Name {
+    background-color: #7fffd4
+}
+
+* {
+    overflow-x: hidden
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+label {
+    display: flex;
+    width: 30%;
+    align-content: center;
+    flex-wrap: wrap
+}
+
+.inputAddEmployee,
+.inputAddFeedback,
+.inputAddVehicle {
+    display: flex;
+    margin: 10px
+}
+
+.formWidth {
+    min-width: 40vw;
+    flex-direction: column;
+    border-radius: 20px;
+    flex-wrap: nowrap;
+    border: 2px solid #000;
+    align-items: center;
+    justify-content: center
+}
+
+.addEmployee,
+.addVehicle {
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly
+}
+
+nav {
+    background-color: #d8d8d8;
+    justify-content: space-between
+}
+
+.addContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%
+}
+
+
+
+.Feedback,
+.pricebox {
+    justify-content: center
+}
+
+.Feedback {
+    display: grid;
+    align-self: center
+}
+
+.FeedbackBackground {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #06425c 0, #349bcf 100%, #205dc7 100%)
+}
+
+input,
+option,
+select {
+    border-radius: 15px;
+    border: 0 solid #000;
+    padding: 4px 4px 4px 8px;
+    height: 28px
+}
+
+textarea {
+    padding: 4px;
+    border-radius: 8px;
+    border: 0 solid #000;
+    height: 100px
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.SubmitButton {
+    cursor: pointer;
+    background-color: rgb(90 174 90);
+    height: 40px
+}
+
+.SubmitButton:hover {
+    background-color: #3b64b7;
+    height: 40px
+}
+
+#addFeedback {
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    background-color: #fefefe;
+    justify-content: space-evenly;
+    height: 400px;
+    padding-top: 5%;
+    margin-top: 5px
+}
+
+.FeedbackSubit {
+    width: 130px;
+    margin-left: 60px
+}
+
+.addHeading{
+    display:flex;
+    justify-content:center
+}
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: 0;
+    font-size: 15px
+}
+
+.active,
+.collapsible:hover {
+    background-color: #ccc
+}
+
+.active .content {
+    display: block
+}
+
+.price {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+
+.pricebox {
+    margin: 20px;
+    display: grid;
+    height: 300px;
+    width: 340px;
+    border: 2px solid #000
+}
+
+.circlePrice {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    border: 1px solid #00f
+}
+
+.packPricing p {
+    margin: 0
+}
+
+.packPricing {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 0, 0, .708)
+}
+
+.pricing_main {
+    display: grid;
+    align-self: center;
+    justify-content: center
+}
+
+.purchaseButton {
+    background-color: #fff;
+    color: #5555b2;
+    border: 1px solid #5555b2;
+    border-radius: 4px
+}
+
+.purchaseButton:hover {
+    background-color: #5555b2;
+    color: #fff;
+    border: 1px solid #5555b2
+}
+
+       
+#btnControl{
+    display:none;
+}#btnControl1{
+    display:none;
+}
+
+
+.toggleLabel {
+    cursor: pointer;
+    background-color: #06425c;
+    width: 100%;
+    height: 50px;
+  }
+#btnControl:checked ~ #addEmployee  {
+    display: none;
+  }
+
+#btnControl1:checked ~ #addVehicle  {
+    display: none;
+  }
+input:hover{
+    border: none;
+}
+
+.pricing_main {
+    text-align: center;
+    font-size: 28px;
+    margin: 40px 0 20px;
+    color: #06425c;
+  }
+  
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .pricebox {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .circlePrice {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #349bcf;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .packPricing {
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  .purchaseButton {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #349bcf;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .btnNext{
+    margin-top: 50px;
+    background-color: rgb(97, 97, 207);
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+  }
+
+  .pricing-container {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+}
+
+.pricing-header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.dropdown {
+    width: 48%;
+}
+
+.dropdown-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.result-display {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+.Currency{
+    padding: 15px;
+    margin-top: 10px;
+    height: min-content;
+    background-color: white;
+    border: 2px solid black;
+    
+}
+</style>
+</head>
+<body style=margin:0>
+    <!-- Navbar -->
+    <nav>
+        <div>
+            <img alt=Metacube
+                src=https://europe.metacube.com/wp-content/uploads/2022/04/cropped-LogoMetacube_2786-1.png
+                class=custom-logo height=40></div>
+        <div class=addContent>
+            <a href=#addEmployee>ADD Employee</a>
+             <a href=#addVehicle>Add Vehicle</a> 
+             <a href=#addFeedback>Give Feedback</a>
+             <a href=#pricing>Pricing</a>
+        </div>
+    </nav>
+    <main>
+        <!-- Image Section or Hero Section -->
+        <div id=Hero>
+            <img alt="Metacube main" src=https://europe.metacube.com/wp-content/themes/metacube/assets/img/slide1-image.png>
+        </div>
+
+        <!-- Add Employee Section --> 
+
+        <input type="checkbox" id="btnControl"  />
+    <label for="btnControl" class="toggleLabel">Toggle Add Employee Form</label>    
+        <div id=addEmployee class="Employee">
+            <h2 class="addHeading" >Add Employee</h2>
+            <div class=addEmployee><img alt="Employee" src=https://controlio.net/i/svg/brand-figure.svg width=400px>
+                <form action="" target=_blank class=formWidth>
+                    <div class=inputAddEmployee><label for=name>Full Name</label> <input name=name
+                            placeholder="Full Name"></div>
+                    <div class=inputAddEmployee><label for=password>Password</label> <input name=password
+                            placeholder=Password type=password></div>
+                    <div class=inputAddEmployee><label for=Confirmpassword>Password</label> <input name=Confirmpassword
+                            placeholder="Confirm Password" type=password></div>
+                    <div class=inputAddEmployee><label for=Gender>Gender</label> <select name=Gender name=Gender
+                            id=Gender>
+                            <option value=male>Male
+                            <option value=Female>Female
+                            <option value=Others>Others
+                        </select></div>
+                    <div class=inputAddEmployee><label for=email>Email</label> <input name=email placeholder="Email Id"
+                            type=email></div>
+                    <div class=inputAddEmployee><label for=Number>Number</label> <input name=""
+                            placeholder="Contact Number" type=number></div>
+                    <div style=margin-top:30px>
+                    <input type=submit class=SubmitButton value=submit></div>
+                </form>
+            </div>
+        </div>
+        </div>
+   
+        <!-- Adding Vehicle Section -->
+        <input type="checkbox" id="btnControl1"  />
+        <label for="btnControl1" class="toggleLabel">Toggle Add Vehicle Form</label>
+        <div style=margin-top:100px id=addVehicle>
+            <div class=addVehicle><img alt="" src=https://cdn.pixabay.com/photo/2020/11/16/17/41/car-5749722_1280.png
+                    width=400px style=max-height:500px>
+                <form action="" target=_blank class=formWidth>
+                    <div class=inputAddVehicle><label for=VehicleCompan>Company Name</label> <input name=name
+                            placeholder="Company Name"></div>
+                    <div class=inputAddVehicle><label for=VehicleModel>Vehicle Model</label> <input name=VehicleModel
+                            placeholder=Model></div>
+                    <div class=inputAddVehicle><label for=Confirmpassword>Password</label> <input name=Confirmpassword
+                            placeholder="Confirm Password" type=password></div>
+                    <div class=inputAddVehicle><label for=Vehicle>Vehicle Type</label> <select name=Vehicle id=Vehicle>
+                            <option value=Bike>Bike
+                            <option value=Car>Car
+                            <option value=Tractor>Tractor
+                        </select></div>
+                    <div class=inputAddVehicle><label for=email>Email</label> <input name=email placeholder="Email Id"
+                            type=email></div>
+                    <div class=inputAddVehicle><label for="Vehicle Number">Vehicle Number</label> <input
+                            name=VehicleNumber placeholder="Vehicle Number" type=number></div>
+                    <div class=inputAddVehicle><label for=EmployeeId>Employee Id</label> <input name=EmployeeId
+                            placeholder="Empoyee Id" type=number></div>
+                    <div class=inputAddVehicle><label for=Specification>Specification</label>
+                         <textarea
+                            name=Specification placeholder="Type Here" value=""></textarea></div>
+                    <div><input type=submit class=SubmitButton value=submit></div>
+                </form>
+            </div>
+        </div>
+   
+   
+        <!-- Adding Feedback Section -->
+        <div>
+            <h2 class=Feedback>Add Feedback</h2>
+            <div class=FeedbackBackground>
+                <div id=addFeedback><img alt=""
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZiFNpO4KNEW1-XSTeHAyifS6q8IRqfrxtg6F72T9-4mEdI0zy"
+                        width=400px style=padding:100px;padding-left:20px>
+                    <div>
+                        <h2 style=display:flex;justify-content:center><b>Get in touch</b></h2>
+                        <form action="" target=_blank
+                            style=display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center>
+                            <div class=inputAddFeedback><input name=name placeholder="John Doe"></div>
+                            <div class=inputAddFeedback><input name=email placeholder="Email Id" type=email></div>
+                            <div class=inputAddFeedback><input name=Subject placeholder=Subject></div>
+                            <div class=inputAddFeedback><textarea name=Specification placeholder="Type Here"
+                                    value=""></textarea></div><input type=submit class="SubmitButton FeedbackSubit"
+                                value=submit>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Pricing Section -->
+        <h2 class="pricing_main" id="pricing">Pricing</h2>
+        <div class="price">
+          <div class="pricebox">
+            <p><strong>Cycle</strong></p>
+            <div class="circlePrice"><span>$100</span></div>
+            <div class="packPricing">
+              <p>$5 daily</p>
+              <p>$100 monthly</p>
+              <p>$500 yearly</p>
+            </div>
+            <button class="purchaseButton">Purchase</button>
+          </div>
+          <div class="pricebox">
+            <p><strong>Bike</strong></p>
+            <div class="circlePrice"><span>$100</span></div>
+            <div class="packPricing">
+              <p>$5 daily</p>
+              <p>$100 monthly</p>
+              <p>$500 yearly</p>
+            </div>
+            <button class="purchaseButton">Purchase</button>
+          </div>
+          <div class="pricebox">
+            <p><strong>Car</strong></p>
+            <div class="circlePrice"><span>$100</span></div>
+            <div class="packPricing">
+              <p>$5 daily</p>
+              <p>$100 monthly</p>
+              <p>$500 yearly</p>
+            </div>
+            <button class="purchaseButton">Purchase</button>
+          </div>
+        </div>
+
+    </main>
+    
+    <footer></footer>
+
+   <script > 
+    // name check
+function nameOk(n) {
+    return /^[A-Za-z ]{2,}$/.test(n);
+}
+
+
+// email check
+function emlCheck(e) {
+    return /^[^@]+@[^.]+\..+$/.test(e);
+}
+
+
+// pass strong?
+function howGoodPass(p) {
+    let up = /[A-Z]/.test(p);
+    let low = /[a-z]/.test(p);
+    let num = /[0-9]/.test(p);
+    let spl = /[^A-Za-z0-9]/.test(p);
+    let len = p.length >= 8;
+
+
+    if (up && low && num && spl && len) {
+        return "strong";
+    } else if (up && low && num && len) {
+        return "normal";
+    } else {
+        return "weak";
+    }
+}
+
+
+// num valid
+function numOkay(n) {
+    return /^\d{9,}$/.test(n);
+}
+
+
+
+
+// ========== emp form ============
+function empFormStart() {
+    let frm = document.querySelector("#addEmployee form");
+    frm.innerHTML = "";
+
+
+    let gotName = "";
+    let steps = [
+        {
+            label: "What is your name?",
+            name: "name", type: "text",
+            validate: nameOk
+        },
+        {
+            label: `Hi ${gotName}! What's ur gender?`,
+            name: "gender", type: "radio",
+            options: ["Male", "Female", "Other"]
+        },
+        {
+            label: "Email pls",
+            name: "email", type: "email",
+            validate: emlCheck
+        },
+        {
+            label: "Make a password",
+            name: "password", type: "password",
+            validate: howGoodPass
+        },
+        {
+            label: "Retype password",
+            name: "confirmPassword", type: "password"
+        },
+        {
+            label: "Phone number?",
+            name: "number", type: "number", validate: numOkay
+        }
+    ];
+
+
+    let current = 0;
+    let collected = {};
+
+
+    nxt();
+
+
+    function nxt() {
+        let f = steps[current];
+        frm.innerHTML = "";
+
+
+        let lbl = document.createElement("label");
+        gotName = collected.name;
+        lbl.innerText = f.label;
+        frm.appendChild(lbl);
+
+
+        let inp;
+
+
+        if (f.type === "radio") {
+            f.options.forEach(g => {
+                let r = document.createElement("input");
+                r.type = "radio";
+                r.name = f.name;
+                r.value = g;
+
+
+                let t = document.createElement("span");
+                t.innerText = " " + g;
+
+
+                frm.appendChild(r);
+                frm.appendChild(t);
+            });
+
+
+        } else {
+            inp = document.createElement("input");
+            inp.type = f.type;
+            inp.name = f.name;
+            frm.appendChild(inp);
+
+
+            if (f.name === "password") {
+                inp.addEventListener("input", function () {
+                    let str = howGoodPass(inp.value);
+                    if (str === "strong") inp.style.border = "4px solid green";
+                    else if (str === "normal") inp.style.border = "4px solid orange";
+                    else inp.style.border = "4px solid red";
+                });
+            }
+        }
+
+
+        frm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+
+            let val;
+
+
+            if (f.type === "radio") {
+                let ch = frm.querySelector(`input[name="${f.name}"]:checked`);
+                val = ch ? ch.value : null;
+                if (!val) return;
+            } else {
+                val = frm.querySelector(`input[name="${f.name}"]`).value;
+                if (f.name === "confirmPassword" && val !== collected.password) {
+                    alert("No match password!");
+                    return;
+                }
+                if (f.validate && !f.validate(val)) {
+                    alert("Invalid input, try again.");
+                    return;
+                }
+            }
+
+
+            collected[f.name] = val;
+            current++;
+
+
+            if (current < steps.length) {
+                nxt();
+            } else {
+                console.log("Id is " + Math.floor(Math.random() * 1000));
+                document.querySelector("#addEmployee").style.display = "none";
+                carFormNow(collected);
+            }
+        });
+
+
+        let b = document.createElement("button");
+        b.type = "submit";
+        b.innerText = "Next";
+        b.className = "btnNext";
+        frm.appendChild(b);
+    }
+}
+
+
+
+
+// <------------ car Parking ---------->
+function carFormNow(empD) {
+    let frm = document.querySelector("#addVehicle form");
+    frm.innerHTML = "";
+
+
+    let stepz = [
+        { label: "Vehicle name?", name: "vname", type: "text" },
+        { label: "Type of vehicle?", name: "vtype", type: "select", options: ["Cycle", "MotorCycle", "Four Wheeler"] },
+        { label: "Plate number?", name: "vnum", type: "text" },
+        { label: "Emp ID?", name: "empid", type: "number" },
+        { label: "Some ID of vehicle?", name: "ident", type: "textarea" }
+    ];
+
+
+    let s = 0;
+    let dataz = {};
+
+
+    nextField();
+
+
+    function nextField() {
+        let f = stepz[s];
+        frm.innerHTML = "";
+
+
+        let l = document.createElement("label");
+        l.innerText = f.label;
+        frm.appendChild(l);
+
+
+        let i;
+        if (f.type === "select") {
+            i = document.createElement("select");
+            f.options.forEach(x => {
+                let o = document.createElement("option");
+                o.value = x;
+                o.innerText = x;
+                i.appendChild(o);
+            });
+        } else if (f.type === "textarea") {
+            i = document.createElement("textarea");
+        } else {
+            i = document.createElement("input");
+            i.type = f.type;
+        }
+
+
+        i.name = f.name;
+        frm.appendChild(i);
+
+
+        frm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            let v = frm.querySelector(`[name="${f.name}"]`).value;
+            if (!v) {
+                alert("Don't leave it blank");
+                return;
+            }
+            dataz[f.name] = v;
+            s++;
+            if (s < stepz.length) {
+                nextField();
+            } else {
+                document.querySelector("#addVehicle").style.display = "none";
+                showPriceList(dataz.vtype);
+            }
+        });
+
+
+        let b = document.createElement("button");
+        b.type = "submit";
+        b.innerText = "Next";
+        b.className = "btnNext";
+        frm.appendChild(b);
+    }
+}
+
+
+
+
+// <<---------------------------Pricing--------------------------->>
+function showPriceList(vType) {
+    let cost = {
+        "Cycle": [5, 100, 500],
+        "MotorCycle": [10, 200, 1000],
+        "Four Wheeler": [20, 500, 3500]
+    };
+
+
+    let box = document.getElementById("pricing");
+    box.innerHTML = "<h3>Pick price:</h3>";
+
+
+    let selPlan = document.createElement("select");
+    selPlan.className="Currency"
+    let allPlans = ["Daily", "Monthly", "Yearly"];
+
+
+    allPlans.forEach((p, i) => {
+        let opt = document.createElement("option");
+        opt.value = i;
+        opt.innerText = p + " - ₹" + cost[vType][i];
+        selPlan.appendChild(opt);
+    });
+
+
+    let selCurr = document.createElement("select");
+    selCurr.className="Currency";
+    ["INR", "USD", "YEN"].forEach(curr => {
+        let o = document.createElement("option");
+        o.value = curr;
+        o.innerText = curr;
+        
+        selCurr.appendChild(o);
+    });
+
+
+    let btn = document.createElement("button");
+    btn.innerText = "Get Pass";
+    btn.className = "btnNext";
+
+
+    let res = document.createElement("div");
+
+
+    btn.onclick = function () {
+        let idx = selPlan.value;
+        let price = cost[vType][idx];
+        let c = selCurr.value;
+
+
+        let out = price;
+        if (c === "USD") out = (price / 83).toFixed(2);
+        else if (c === "YEN") out = (price * 1.57).toFixed(2);
+
+
+        let usd = (price / 83).toFixed(2);
+
+
+        res.innerText = "You selected " + c + " " + out + ". Price $" + usd;
+    };
+
+
+    box.appendChild(selPlan);
+    box.appendChild(selCurr);
+    box.appendChild(btn);
+    box.appendChild(res);
+}
+
+
+
+
+empFormStart();
+showPriceList('Cycle');
+ 
+
+   </script>
+
+</html>
