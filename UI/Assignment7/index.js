@@ -26,20 +26,17 @@ const  howGoodPass= (p)=> {
     }
 }
 
-
 // num valid
 const numOkay = (n)=> {
     return /^\d{9,}$/.test(n);
 }
-
-
-
 
 // <<========== emp form ============>>
 const empFormStart = ()=> {
     let frm = document.querySelector("#addEmployee form");
     frm.innerHTML = "";
     let gotName = "";
+
     // types of the field and field name
     let steps = [
         {
@@ -198,7 +195,7 @@ const  carFormNow = (empD)=> {
         i.name = f.name;
         frm.appendChild(i);
 
-        // adding an 
+        // adding an even lister or submitting the button
         frm.addEventListener("submit",  (e)=> {
             let v = frm.querySelector(`[name="${f.name}"]`).value;
             if (!v) {
@@ -236,7 +233,7 @@ const  showPriceList=(vType)=> {
     selPlan.className="Currency"
     let allPlans = ["Daily", "Monthly", "Yearly"];
 
-     // for loop for all prices
+     // for loop for showing all prices
     allPlans.forEach((p, i) => {
         let opt = document.createElement("option");
         opt.value = i;
@@ -276,8 +273,6 @@ const  showPriceList=(vType)=> {
     box.appendChild(btn);
     box.appendChild(res);
 }
-
-
 
 // calling the functions
 empFormStart();
