@@ -4,16 +4,19 @@ const nameOk = (n: string): boolean =>
         return /^[A-Za-z ]{2,}$/.test(n);
     }
 
+// validating email
 const emlCheck = (e: string): boolean =>
     { return /^[^@]+@[^.]+\..+$/.test(e);
 
     }
 
+// validating password
 const howGoodPass = (p: string): string => {
     const up = /[A-Z]/.test(p), low = /[a-z]/.test(p), num = /[0-9]/.test(p), spl = /[^A-Za-z0-9]/.test(p), len = p.length >= 8;
     return up && low && num && spl && len ? "strong" : up && low && num && len ? "normal" : "weak";
     };
 
+// number is ok
 const numOkay = (n: string): boolean =>
      { 
         return /^\d{9,}$/.test(n);
@@ -238,7 +241,7 @@ const carForm= (emp: Employee): void => {
 
     let current = 0;
     const collected: Record<string, string> = {};
-
+    // nextstep function
     const nextStep = (): void => {
         const f = steps[current];
         frm.innerHTML = "";
@@ -247,6 +250,7 @@ const carForm= (emp: Employee): void => {
         frm.appendChild(lbl);
         let inp: HTMLInputElement | HTMLSelectElement;
 
+        // if type is select and also has options select it 
         if (f.type === "select" && f.options) {
             inp = document.createElement("select");
             f.options.forEach(option => {
@@ -263,25 +267,30 @@ const carForm= (emp: Employee): void => {
         inp.name = f.name;
         frm.appendChild(inp);
 
+        // addevent listener 
         frm.addEventListener("submit", (e: Event) => {
             e.preventDefault();
             const inputElement = frm.querySelector(`[name="${f.name}"]`) as HTMLInputElement;
             const v = inputElement.value;
+            // if there is no value
             if (!v) {
                 alert("Don't leave it blank");
                 return;
             }
-
             collected[f.name] = v;
             current++;
+
+            // on which input we are if it is last end the form open pricing  
             if (current < steps.length) {
                 nextStep();
             } else {
                 const newVehicle = new Vehicle(collected.vname, collected.vtype, collected.vnum, emp);
                 console.log(newVehicle.getVehicleDetails());
+                showPriceList(collected.vtype);
             }
         });
 
+        // adding button in teh dom
         const btn = document.createElement("button");
         btn.type = "submit";
         btn.innerText = "Next";
